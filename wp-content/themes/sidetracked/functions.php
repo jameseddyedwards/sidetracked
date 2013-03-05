@@ -54,6 +54,39 @@ register_nav_menu('navigation-footer', __('Footer Navigation', 'sidetracked'));
 // Add default posts and comments RSS feed links to <head>.
 add_theme_support('automatic-feed-links');
 
+// Add Sidetracked's custom image sizes
+add_theme_support('post-thumbnails');
+add_image_size('thumbnail', '195', '195', true);
+add_image_size('small', '404', '404', true);
+add_image_size('medium', '822', '822', true);
+add_image_size('large', '1240', '1240', true);
+add_image_size('small_rectangle', '613', '404', true);
+add_image_size('medium_rectangle', '822', '404', true);
+add_image_size('large_rectangle', '1240', '822', true);
+add_image_size('wide_rectangle', '1240', '404', true);
+
+/**
+ * Remove standard image sizes so that these sizes are not
+ * created during the Media Upload process
+ *
+ * Tested with WP 3.2.1
+ *
+ * Hooked to intermediate_image_sizes_advanced filter
+ * See wp_generate_attachment_metadata( $attachment_id, $file ) in wp-admin/includes/image.php
+ *
+ * @param $sizes, array of default and added image sizes
+ * @return $sizes, modified array of image sizes
+ * @author Ade Walker http://www.studiograsshopper.ch
+ */
+function sgr_filter_image_sizes( $sizes) {
+		
+	unset($sizes['thumbnail']);
+	unset($sizes['medium']);
+	unset($sizes['large']);
+	
+	return $sizes;
+}
+//add_filter('intermediate_image_sizes_advanced', 'sgr_filter_image_sizes');
 
 /**
  * Sets up theme defaults and registers support for various WordPress features.
@@ -64,7 +97,7 @@ add_theme_support('automatic-feed-links');
  *
  * To override sidetracked_setup() in a child theme, add your own sidetracked_setup to your child theme's
  * functions.php file.
- *
+*
  * @uses load_theme_textdomain() For translation/localization support.
  * @uses add_editor_style() To style the visual editor.
  * @uses add_theme_support() To add support for post thumbnails, automatic feed links, and Post Formats.
@@ -90,15 +123,6 @@ function sidetracked_setup() {
 	if (is_readable($locale_file)) {
 		require_once($locale_file);
 
-		// Add Sidetracked's custom image sizes
-		add_image_size('thumbnail_square', '195', '195', true);
-		add_image_size('small_square', '404', '404', true);
-		add_image_size('medium_square', '822', '822', true);
-		add_image_size('large_square', '1240', '1240', true);
-		add_image_size('small_rectangle', '613', '404', true);
-		add_image_size('medium_rectangle', '822', '404', true);
-		add_image_size('large_rectangle', '1240', '822', true);
-		add_image_size('wide_rectangle', '1240', '404', true);
 	}
 }
 add_action('after_setup_theme', 'sidetracked_setup');
