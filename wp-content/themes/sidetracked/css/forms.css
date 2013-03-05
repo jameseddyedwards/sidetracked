@@ -1,0 +1,18 @@
+/* Forms */
+form input[type="text"],
+form textarea,
+form select {border:1px solid #e1e1e1; border-radius:2px; color:#666; display:block; font-family:Arial, Helvetica, sans-serif; font-size:15px;}
+
+.main form input[type="text"],
+.main form textarea,
+.main form select {margin-bottom:15px;}
+
+form input[type="text"],
+form textarea {padding:6px 10px;}
+form select {padding:5px 6px 5px 10px;}
+form div p {color:#666;}
+form div p em {color:red;}
+form p {margin:0 0 2px;}
+
+div.wpcf7-mail-sent-ok {border:1px solid #398F14; border-radius:4px;}
+div.wpcf7-response-output {margin:0; padding:4px 10px;}

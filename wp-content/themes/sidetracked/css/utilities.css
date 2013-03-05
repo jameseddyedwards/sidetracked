@@ -1,0 +1,68 @@
+/* Utility Classes */
+.bottom {border-bottom:0; margin-bottom:0;}
+.clear {clear:both;}
+.excerpt {color:#191919; display:block; font-size:15px; font-style:italic; line-height:22px;}
+.hidden {display:none;}
+.hide-text {background-color:transparent; border:0; color:transparent; font:0/0 a; text-shadow:none;}
+.top {margin-top:0;}
+
+blockquote,
+blockquote p,
+blockquote a {font-size:18px; line-height:30px; font-style:italic;}
+blockquote,
+blockquote p {color:#8d8d8d; display:block; margin:10px 0 30px;}
+blockquote a {color:#005580;}
+blockquote span,
+blockquote em {clear:both; display:block; font:14px Arial, Helvetica, sans-serif; line-height:30px; margin-left:30px; color:#999999;}
+
+address {display:block; margin-bottom:20px; line-height:20px; font-style:normal;}
+small {font-size:100%;}
+cite {font-style:normal;}
+
+.assistive-text {position:absolute !important; clip:rect(1px 1px 1px 1px); /* IE6, IE7 */}
+.access a.assistive-text:active,
+.access a.assistive-text:focus {background:#eee; border-bottom:1px solid #ddd; color:#1982d1; clip:auto !important; font-size:12px; position:absolute; text-decoration:underline; top:0; left:7.6%;}
+
+.clearfix, .subscribe, .container {*zoom:1;}
+.clearfix:before, .subscribe:before, .container:before,
+.clearfix:after, .subscribe:after, .container:after {display:table; content:"";}
+.clearfix:after, .subscribe:after, .container:after {clear:both;}
+
+.post-edit-link {background:url('../images/sprite/icons.png') no-repeat right bottom; bottom:0; height:75px; overflow:hidden; position:fixed; right:0; text-indent:-999px; width:75px;}
+
+/* Responsive Visibility */
+.visible-phone {display:none;}
+.visible-tablet {display:none;}
+.hidden-desktop {display:none;}
+.visible-desktop {display:inherit;}
+
+
+/* Phone - Vertical */
+@media (max-width:480px) {
+	.main .excerpt {margin:15px 0 30px;}
+}
+
+/* Phone - Horizontal */
+@media (max-width:767px) {
+
+}
+
+/* Tablet - Vertical */
+@media (min-width:768px) and (max-width:979px) {
+
+}
+
+/* Small Browser */
+@media (min-width:979px) {
+
+}
+
+/* Small Browser */
+@media (min-width:1200px) {
+
+}
+
+/* Large Browser */
+@media (min-width:1600px) {
+
+}

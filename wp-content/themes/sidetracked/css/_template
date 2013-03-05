@@ -1,0 +1,30 @@
+/* Media Queries */
+/* Phone - Vertical */
+@media (max-width:480px) {
+	
+}
+
+/* Phone - Horizontal */
+@media (max-width:767px) {
+
+}
+
+/* Tablet - Vertical */
+@media (min-width:768px) and (max-width:979px) {
+
+}
+
+/* Tablet - Horizontal */
+@media (min-width:979px) and (max-width:1200px) {
+
+}
+
+/* Small Browser */
+@media (min-width:1200px) {
+
+}
+
+/* Large Browser */
+@media (min-width:1600px) {
+
+}

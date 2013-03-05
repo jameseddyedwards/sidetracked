@@ -1,0 +1,38 @@
+/* Gallery */
+
+
+/* Phone - Vertical */
+@media (max-width:480px) {
+
+}
+
+/* Phone - Horizontal */
+@media (max-width:767px) {
+
+}
+
+/* Tablet - Vertical */
+@media (min-width:768px) and (max-width:979px) {
+
+}
+
+/* Tablet & Smaller */
+@media (max-width:1199px) {
+
+}
+
+
+/* Small Monitor */
+@media (min-width:979px) {
+
+}
+
+/* XL Monitor */
+@media (min-width:1200px) {
+
+}
+
+/* Large Browser */
+@media (min-width:1600px) {
+
+}
