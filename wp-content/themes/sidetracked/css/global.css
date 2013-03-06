@@ -11,7 +11,7 @@ header .logo img {display:block;}
 header nav {background-color:#121212; padding:10px 0; text-align:center;}
 header nav ul {font-size:0;}
 header nav li {display:inline-block;}
-header nav li a {border-right:1px dotted #747474; display:block; font-family:"proxima-nova",sans-serif; padding:2px 25px; text-transform:uppercase;}
+header nav li a {border-right:1px dotted #747474; display:block; font-family:"proxima-nova", helvetica, arial, sans-serif; padding:2px 25px; text-transform:uppercase;}
 header nav li:last-child a {border-right:0;}
 header nav li.menu-parent-item {position:relative;}
 header nav li.menu-parent-item > a {background:url('../images/sprite/icons.png') no-repeat 104px -22px; padding-right:35px;}

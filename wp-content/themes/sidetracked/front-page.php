@@ -70,27 +70,11 @@ $images = get_field('sidetracked_gallery');
 if( $images ): ?>
     <div id="slider" class="flexslider">
         <ul class="slides">
-            <?php foreach( $images as $image ): ?>
+            <?php foreach($images as $image): ?>
                 <li>
-                    <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+                    <img src="<?php echo $image['sizes']['thumbnail-square']; ?>" alt="<?php echo $image['alt']; ?>" />
                     <p class="flex-caption"><?php echo $image['caption']; ?></p>
                     <?php wp_get_attachment_metadata($attachment_id); ?>
-                </li>
-            <?php endforeach; ?>
-        </ul>
-    </div>
-    <?php
- 
-    /*
-    *  The following code creates the thumbnail navigation
-    */
- 
-    ?>
-    <div id="carousel" class="flexslider">
-        <ul class="slides">
-            <?php foreach( $images as $image ): ?>
-                <li>
-                    <img src="<?php echo $image['sizes']['thumbnail']; ?>" alt="<?php echo $image['alt']; ?>" />
                 </li>
             <?php endforeach; ?>
         </ul>

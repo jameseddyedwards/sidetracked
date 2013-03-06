@@ -21,7 +21,7 @@ h5 small,
 h6 small {font-weight:normal; color:#2c2c2c;}
 
 h1,
-h1 a {font:45px/44px din-light, helvetica, arial; text-transform:uppercase;}
+h1 a {font:45px/44px "proxima-nova", helvetica, arial, sans-serif; text-transform:uppercase;}
 h1 {margin:20px 0; text-align:center;}
 h1 small {font-size:18px;}
 
