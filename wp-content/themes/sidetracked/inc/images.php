@@ -59,6 +59,26 @@ function custom_wmu_image_sizes($sizes) {
 add_filter('image_size_names_choose', 'custom_wmu_image_sizes');
 
 
+function sidetracked_gallery($sizes) {
+	$gallery = get_field('sidetracked_gallery');
+	$html = '';
+
+	if ($images) {
+		$html = '<div class="flexslider">';
+		$html .= '<ul class="slides">';
+		foreach($images as $image) {
+			$html .= '<li>';
+			$html .= '<img src="' . $image['sizes']['thumbnail-square'] . '" alt="' . $image['alt'] . '" />';
+			$html .= '<p class="flex-caption">' . $image['caption'] . '</p>';
+			// Try to get metadata for image - link
+			// $html .= '<?php wp_get_attachment_metadata($attachment_id);
+			$html .= '</li>';
+		}
+		$html .= '</ul>';
+		$html .= '</div>';
+	}
+	return $html;
+}
 /*
  * Creates a size specifc image 
  * $size = Any image size shown above
