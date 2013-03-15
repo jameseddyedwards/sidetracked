@@ -17,7 +17,11 @@ get_header();
 ?>
 
 <?php /* ID required for screen readers link */ ?>
+<<<<<<< HEAD
 <section id="body-content">
+=======
+<section>
+>>>>>>> Work on editions layout
 	<?php get_template_part('content-edition'); ?>
 </section>
 
