@@ -11,10 +11,7 @@ $images = get_field('sidetracked_gallery');
 $imageSizes = get_field('sidetracked_gallery_layout');
 $imageSizeArray = explode(",", $imageSizes);
 $i = 0;
-<<<<<<< HEAD
 $pageTitle = strtolower(get_the_title(get_the_id()));
-=======
->>>>>>> Work on editions layout
 
 ?>
 
@@ -22,7 +19,6 @@ $pageTitle = strtolower(get_the_title(get_the_id()));
 
 <?php while (have_posts()) : the_post(); ?>
 	
-<<<<<<< HEAD
 	<section class="block" id="body-content">
 
 		<?php if ($images) { ?>
@@ -79,7 +75,7 @@ $pageTitle = strtolower(get_the_title(get_the_id()));
 			<?php next_post('%', '', 'yes'); ?>
 		</span>
 	</section>
-=======
+
 <?php // var_dump(get_field('sidetracked_gallery')); // View array data (for debugging) ?>
    
 <section id="body-content">
@@ -108,6 +104,5 @@ $pageTitle = strtolower(get_the_title(get_the_id()));
 		</div>
 	<?php } ?>
 </section>
->>>>>>> Work on editions layout
 
 <?php endwhile; ?>
