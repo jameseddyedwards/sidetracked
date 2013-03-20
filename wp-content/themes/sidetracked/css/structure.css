@@ -14,7 +14,6 @@ the gridpak.js file to use '.block' as it's container.
 .block {margin:0 auto; max-width:1240px; overflow:hidden; position:relative;}
 
 /* Reusable column setup */
-<<<<<<< HEAD
 .span {border:0px solid rgba(0,0,0,0); float:left; margin-bottom:12px;
 	box-sizing:border-box;
 	moz-box-sizing:border-box;
@@ -25,11 +24,6 @@ the gridpak.js file to use '.block' as it's container.
 }
 .span img {width:100%;}
 .span a,
-=======
-.span {background-clip:padding-box !important; border:0px solid rgba(0,0,0,0); box-sizing:border-box; float:left; margin-bottom:12px; moz-background-clip:padding-box !important; moz-box-sizing:border-box; webkit-background-clip:padding-box !important; webkit-box-sizing:border-box;}
-.span img {width:100%;}
-.span a {display:block;}
->>>>>>> Work on editions layout
 .span a img {display:block;}
 
 /* 1. 2 Column Grid 0px - 319px 
@@ -39,7 +33,7 @@ Span 2: 100%
 ----------------------------------------------------------------------------- */
 @media screen and (min-width: 0px) and (max-width: 319px) {
 	.row {margin-left:-12px;}
-	.span {border-left-width:12px; height:100px;}
+	.span {border-left-width:12px; height:100px; padding:0 12px;}
 
 	.one {width:50%;}
 	.two,
@@ -85,11 +79,7 @@ Span 11: 91.6666666667%
 Span 12: 100%
 ----------------------------------------------------------------------------- */
 @media screen and (min-width: 920px) {
-<<<<<<< HEAD
 	.row {margin-left:-12px; padding:0 12px;}
-=======
-	.row {margin-left:-12px;}
->>>>>>> Work on editions layout
 	.span {border-left-width:12px;}
 
 	.one {width:8.33333333333%;}
