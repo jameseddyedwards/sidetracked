@@ -22,7 +22,7 @@ h6 small {font-weight:normal; color:#2c2c2c;}
 
 h1,
 h1 a {font:45px/44px "proxima-nova", helvetica, arial, sans-serif; text-transform:uppercase;}
-h1 {margin:20px 0; text-align:center;}
+h1 {margin:30px 0 50px; text-align:center;}
 h1 small {font-size:18px;}
 
 h2,
@@ -49,7 +49,12 @@ p {}
 p small {font-size:9px;}
 
 a {color:#fff; display:inline-block; text-decoration:none;}
-a:hover {color:#747474; text-decoration:none;}
+a:hover {color:#747474; text-decoration:none;
+	transition: color .25s ease-in;
+	-moz-transition: color .25s ease-in;
+	-webkit-transition: color .25s ease-in;
+	-o-transition: color .25s ease-in;
+}
 a:focus {outline:thin dotted #333; outline:5px auto -webkit-focus-ring-color; outline-offset:-2px;}
 a:hover, a:active {outline:0;}
 a img {display:inline-block;}

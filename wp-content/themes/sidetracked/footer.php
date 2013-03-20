@@ -11,7 +11,7 @@
 
 ?>
 
-<footer>
+<footer class="block">
 
 	<!-- Footer Navigation -->
 	<nav class="navigation" role="secondary navigation">

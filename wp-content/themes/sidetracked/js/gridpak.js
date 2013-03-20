@@ -10,7 +10,7 @@ var gridpak = {
      * DOM element to append the Gridpak too
      *
      */
-    append: 'div.page',
+    append: '.block',
 
     css: '',
 
@@ -20,7 +20,7 @@ var gridpak = {
      * Checks for jQuery and includes it from Google CDN if not
      *
      */
-    bootstrap: function($) {
+    bootstrap: function() {
         var jquerySrc = 'http://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js',
             script = {},
             that = this;
@@ -33,7 +33,7 @@ var gridpak = {
             document.body.insertBefore(script, document.body.firstChild);
             setTimeout('gridpak.init()', 500);
         } else {
-            jQuery(function() { that.init(); });
+            $(function() { that.init(); });
         }
     },
 
@@ -113,7 +113,7 @@ var gridpak = {
                 'background:rgba(255,255,255,0.3); ' +
             '} ';
 
-        this.$container = jQuery(markup);
+        this.$container = $(markup);
 
         // Put the grids on the screen
         for (i; i<=numGrids; i++) {
@@ -122,11 +122,11 @@ var gridpak = {
         }
 
         this.css += '</style>';
-        jQuery(this.append).prepend(this.css);
+        $(this.append).prepend(this.css);
 
         this.toggleGrid();
 
-        jQuery(this.append).append(gridpak.$container);
+        $(this.append).append(gridpak.$container);
 
      },
 
@@ -192,7 +192,7 @@ var gridpak = {
      toggleGrid: function() {
         var that = this;
 
-        jQuery(document).keyup(function(e) {
+        $(document).keyup(function(e) {
             if (e.keyCode == 71) {
                 that.$container.toggle();
             }
@@ -203,4 +203,4 @@ var gridpak = {
 
 
 // Kick it off!
-gridpak.bootstrap(jQuery);
+gridpak.bootstrap();

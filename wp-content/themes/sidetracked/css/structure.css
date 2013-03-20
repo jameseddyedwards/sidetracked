@@ -1,5 +1,5 @@
 
-/* Structure */
+/* Structure 
 section,
 footer {margin:0 auto; width:1240px;}
 
@@ -9,13 +9,22 @@ article {}
 /*
 Page is our center aligned 95% width container. We have set it's 'position' as relative
 so that the Gridpak overlay will appear in the correct position. We have also updated
-the gridpak.js file to use '.page' as it's container.
+the gridpak.js file to use '.block' as it's container.
 */
-section {margin:0 auto; max-width:95%; overflow:hidden; position:relative;}
+.block {margin:0 auto; max-width:1240px; overflow:hidden; position:relative;}
 
 /* Reusable column setup */
-.span {background:#777; background-clip:padding-box !important; border:0px solid rgba(0,0,0,0); box-sizing:border-box; float:left; margin-bottom:12px; moz-background-clip:padding-box !important; moz-box-sizing:border-box; webkit-background-clip:padding-box !important; webkit-box-sizing:border-box;}
+.span {border:0px solid rgba(0,0,0,0); float:left; margin-bottom:12px;
+	box-sizing:border-box;
+	moz-box-sizing:border-box;
+	webkit-box-sizing:border-box;
+	background-clip:padding-box !important;
+	moz-background-clip:padding-box !important;
+	webkit-background-clip:padding-box !important;
+}
 .span img {width:100%;}
+.span a,
+.span a img {display:block;}
 
 /* 1. 2 Column Grid 0px - 319px 
 ----------------------------------------------------------------------------- 
@@ -42,7 +51,7 @@ Span 5: 83.0%
 Span 6: 1000%
 ----------------------------------------------------------------------------- */
 @media screen and (min-width: 320px) and (max-width: 919px) {
-	.span {margin-left:2%; padding:0 2%;}
+	.span {padding:0 2%;}
 	.row .span:first-child {margin-left:0;}
 
 	.one {width:15.0%;}
@@ -70,8 +79,8 @@ Span 11: 91.6666666667%
 Span 12: 100%
 ----------------------------------------------------------------------------- */
 @media screen and (min-width: 920px) {
-	.row {margin-left:-12px;}
-	.span {border-left-width:12px; padding:0 12px;}
+	.row {margin-left:-12px; padding:0 12px;}
+	.span {border-left-width:12px;}
 
 	.one {width:8.33333333333%;}
 	.two {width:16.6666666667%;}

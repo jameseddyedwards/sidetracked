@@ -15,11 +15,22 @@
 
 get_header();
 
-?>
+$parentPage = get_post($post->post_parent);
+$parentPageTitle = strtolower($parentPage->post_title);
 
+switch ($parentPageTitle) {
+	case "editions":
+		$content = "content-edition";
+		break;
+	default:
+		$content = "content";
+}
+
+
+?>
 <?php /* ID required for screen readers link */ ?>
 <section id="body-content">
-	<?php get_template_part('content'); ?>
+	<?php get_template_part($content); ?>
 </section>
 
 <?php get_footer(); ?>

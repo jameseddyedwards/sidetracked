@@ -18,7 +18,7 @@ get_header();
 
 <?php /* ID required for screen readers link */ ?>
 <section id="body-content">
-	<?php get_template_part('content'); ?>
+	<?php get_template_part('content-edition'); ?>
 </section>
 
 <?php get_footer(); ?>
