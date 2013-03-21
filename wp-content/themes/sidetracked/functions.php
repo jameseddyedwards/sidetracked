@@ -56,6 +56,11 @@ register_nav_menu('navigation-footer', __('Footer Navigation', 'sidetracked'));
 // Add default posts and comments RSS feed links to <head>.
 add_theme_support('automatic-feed-links');
 
+// This theme supports a variety of post formats.
+add_post_type_support('article', 'post-formats');
+
+// add post-formats to post_type 'my_custom_post_type'
+
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  *
