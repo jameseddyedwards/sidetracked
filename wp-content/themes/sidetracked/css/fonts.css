@@ -45,7 +45,8 @@ h6 {font-size:11px; text-transform:uppercase;}
 
 p, a, span, li {font-size:15px;}
 
-p {font:16px/26px georgia, times, serif;}
+p,
+article div {font:16px/26px georgia, times, serif; margin-bottom:25px;}
 p small {font-size:9px;}
 
 a {color:#fff; display:inline-block; text-decoration:none;}

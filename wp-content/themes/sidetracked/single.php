@@ -18,13 +18,13 @@ get_header();
 	<?php get_template_part('content'); ?>
 
 	<!-- Comments -->
-	<?php comments_template('', true); ?>
+	<?php// comments_template('', true); ?>
 
 	<!-- Comments Form -->
-	<?php get_template_part('content', 'comments-form'); ?>
+	<?php// get_template_part('content', 'comments-form'); ?>
 
 	<!-- Recent Posts -->
-	<?php get_template_part('content', 'recent-posts'); ?>
+	<?php// get_template_part('content', 'recent-posts'); ?>
 
 </section>
 

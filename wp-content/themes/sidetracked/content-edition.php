@@ -12,7 +12,7 @@ $pageTitle = get_the_title(get_the_id());
 $editionNumber = explode(" ", $pageTitle);
 $editionNumber = (int)$editionNumber[1];
 $nextEdition = "Edition " . ($editionNumber + 1);
-$nextEditionId = get_page_by_title($nextEdition);
+$nextEditionId = get_page_by_title("Edition 3");
 $nextEditionLink = get_permalink($nextEditionId);
 
 $previousEdition = "Edition " . ($editionNumber - 1);
@@ -22,7 +22,7 @@ $previousEditionLink = get_permalink($previousEditionId);
 $editionsPage = get_page_by_title('Editions');
 $editionsLink = get_permalink($editionsPage->ID);
 $categoryId = get_cat_ID($pageTitle);
-$args = array(
+$postArgs = array(
 	'posts_per_page'  => -1,
 	'numberposts'     => -1,
 	'offset'          => 0,
@@ -39,7 +39,7 @@ $args = array(
 	'post_status'     => 'publish',
 	'suppress_filters' => true
 );
-$editionPosts = get_posts($args);
+$editionPosts = get_posts($postArgs);
 
 ?>
 

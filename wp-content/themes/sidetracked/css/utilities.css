@@ -32,7 +32,7 @@ cite {font-style:normal;}
 .next-prev-arrows .prev {background-position:0 -116px; left:0;}
 .next-prev-arrows .next {background-position:-117px -116px; right:0;}
 
-.next-prev-bar {border-bottom:1px dotted #777; border-top:1px dotted #5a5a5a; margin:100px 0 70px; padding:20px 0;}
+.next-prev-bar {border-bottom:1px dotted #777; border-top:1px dotted #5a5a5a; margin:100px 0 0; padding:20px 0;}
 .next-prev-bar span {width:48%;
 	box-sizing:border-box;
 	moz-box-sizing:border-box;

@@ -31,10 +31,6 @@ $featureImageObj = get_field('sidetracked_feature_image');
 				<?php the_content(); ?>
 			</div>
 
-			<?php the_field('sidetracked_quote_01'); ?>
-
-			
-
 			<?php wp_link_pages(array('before' => '<div class="page-link"><span>' . __( 'Pages:', 'sidetracked' ) . '</span>', 'after' => '</div>')); ?>
 
 			<?php if (get_the_author_meta('description') && is_multi_author()) { // If a user has filled out their description and this is a multi-author blog, show a bio on their entries ?>
@@ -53,15 +49,17 @@ $featureImageObj = get_field('sidetracked_feature_image');
 					</div>
 				</div>
 			<?php } ?>
+			
+			<?php /*
 
 			<?php
-				/* translators: used between list items, there is a space after the comma */
+				// translators: used between list items, there is a space after the comma
 				$categories_list = get_the_category_list( __( ', ', 'sidetracked' ) );
 
-				/* translators: used between list items, there is a space after the comma */
+				// translators: used between list items, there is a space after the comma
 				$tag_list = get_the_tag_list('', __(', ','sidetracked'));
 				if ('' != $tag_list) {
-					/* $utility_text = __( 'This entry was posted in %1$s and tagged %2$s by <a href="%6$s">%5$s</a>. Bookmark the <a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>.', 'sidetracked' ); */
+					// $utility_text = __( 'This entry was posted in %1$s and tagged %2$s by <a href="%6$s">%5$s</a>. Bookmark the <a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>.', 'sidetracked' );
 					$utility_text = __('<span class="meta">Posted in %1$s and tagged %2$s.</span>', 'sidetracked' );
 				} elseif ('' != $categories_list) {
 					$utility_text = __('<span class="meta">Posted in %1$s.</span>', 'sidetracked' );
@@ -79,6 +77,7 @@ $featureImageObj = get_field('sidetracked_feature_image');
 					esc_url(get_author_posts_url(get_the_author_meta('ID')))
 				);
 			?>
+
 
 			<?php $tags = wp_get_post_tags($post->ID); ?>
 			<?php if ($tags) { ?>
@@ -104,6 +103,7 @@ $featureImageObj = get_field('sidetracked_feature_image');
 				</ol>
 			<?php } ?>
 
+
 			<div class="next-previous clearfix">
 				<div class="previous">
 					<?php previous_post_link('%', '', 'yes'); ?>
@@ -112,6 +112,7 @@ $featureImageObj = get_field('sidetracked_feature_image');
 					<?php next_post_link('%', '', 'yes'); ?>
 				</div>
 			</div>
+			<?php */ ?>
 			
 		</article>
 
