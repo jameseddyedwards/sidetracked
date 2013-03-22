@@ -21,13 +21,13 @@ h5 small,
 h6 small {font-weight:normal; color:#2c2c2c;}
 
 h1,
-h1 a {font:45px/44px "proxima-nova", helvetica, arial, sans-serif; text-transform:uppercase;}
-h1 {margin:30px 0 50px; text-align:center;}
+h1 a {font:45px/45px "proxima-nova", helvetica, arial, sans-serif; text-transform:uppercase;}
+h1 {margin:0 0 30px; text-align:center;}
 h1 small {font-size:18px;}
 
 h2,
-h2 a {font:28px/36px din-light, helvetica, arial; text-transform:uppercase;}
-h2 {}
+h2 a {font:italic 21px/28px georgia, times, serif;}
+h2 {margin:0 0 60px; text-align:center;}
 h2 small {font-size:18px;}
 
 h3,
@@ -45,7 +45,7 @@ h6 {font-size:11px; text-transform:uppercase;}
 
 p, a, span, li {font-size:15px;}
 
-p {}
+p {font:16px/26px georgia, times, serif;}
 p small {font-size:9px;}
 
 a {color:#fff; display:inline-block; text-decoration:none;}
@@ -59,7 +59,19 @@ a:focus {outline:thin dotted #333; outline:5px auto -webkit-focus-ring-color; ou
 a:hover, a:active {outline:0;}
 a img {display:inline-block;}
 
-article a {color:#a12a2c;}
+
+/* Editions */
+.home h1 {margin-bottom:50px;}
+
+/* Article */
+.invert h1,
+.invert h3,
+.invert h4,
+.invert h5,
+.invert h6 {color:#202020;}
+
+.invert h2 {color:#606060;}
+
 
 @media (max-width:767px) {
 

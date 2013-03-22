@@ -12,19 +12,19 @@ function span_one_shortcode($atts, $content = null) {
 	}
 }
 
-function structure_row($content = null) {return '<div class="row">' . do_shortcode($content) . '</div>';}
-function structure_span_one($content = null) {return '<div class="one">' . $content . '</div>';}
-function structure_span_two($content = null) {return '<div class="two">' . $content . '</div>';}
-function structure_span_three($content = null) {return '<div class="three">' . $content . '</div>';}
-function structure_span_four($content = null) {return '<div class="four">' . $content . '</div>';}
-function structure_span_five($content = null) {return '<div class="five">' . $content . '</div>';}
-function structure_span_six($content = null) {return '<div class="six">' . $content . '</div>';}
-function structure_span_seven($content = null) {return '<div class="seven">' . $content . '</div>';}
-function structure_span_eight($content = null) {return '<div class="eight">' . $content . '</div>';}
-function structure_span_nine($content = null) {return '<div class="nine">' . $content . '</div>';}
-function structure_span_ten($content = null) {return '<div class="ten">' . $content . '</div>';}
-function structure_span_eleven($content = null) {return '<div class="eleven">' . $content . '</div>';}
-function structure_span_twelve($content = null) {return '<div class="twelve">' . $content . '</div>';}
+function structure_row($atts, $content = null) {return '<div class="row">' . do_shortcode($content) . '</div>';}
+function structure_span_one($atts, $content = null) {return '<div class="span one">' . do_shortcode($content) . '</div>';}
+function structure_span_two($atts, $content = null) {return '<div class="span two">' . do_shortcode($content) . '</div>';}
+function structure_span_three($atts, $content = null) {return '<div class="span three">' . do_shortcode($content) . '</div>';}
+function structure_span_four($atts, $content = null) {return '<div class="span four">' . do_shortcode($content) . '</div>';}
+function structure_span_five($atts, $content = null) {return '<div class="span five">' . do_shortcode($content) . '</div>';}
+function structure_span_six($atts, $content = null) {return '<div class="span six">' . do_shortcode($content) . '</div>';}
+function structure_span_seven($atts, $content = null) {return '<div class="span seven">' . do_shortcode($content) . '</div>';}
+function structure_span_eight($atts, $content = null) {return '<div class="span eight">' . do_shortcode($content) . '</div>';}
+function structure_span_nine($atts, $content = null) {return '<div class="span nine">' . do_shortcode($content) . '</div>';}
+function structure_span_ten($atts, $content = null) {return '<div class="span ten">' . do_shortcode($content) . '</div>';}
+function structure_span_eleven($atts, $content = null) {return '<div class="span eleven">' . do_shortcode($content) . '</div>';}
+function structure_span_twelve($atts, $content = null) {return '<div class="span twelve">' . do_shortcode($content) . '</div>';}
 
 add_shortcode('row', 'structure_row');
 add_shortcode('one', 'structure_span_one');

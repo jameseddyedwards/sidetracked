@@ -1,6 +1,8 @@
 
 /* Single Post */
+.feature-image {margin-bottom:55px; width:100%;}
 
+article {color:#202020;}
 
 /* Phone - Vertical */
 @media (max-width:480px) {

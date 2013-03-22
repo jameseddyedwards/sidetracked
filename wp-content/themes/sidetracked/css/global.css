@@ -2,11 +2,11 @@
 /* Global */
 html {font-size:100%; -webkit-text-size-adjust:100%; -ms-text-size-adjust:100%;}
 body {background-color:#000; color:#fff; font-family:Helvetica, Arial, sans-serif;}
-
+body.invert {background-color:#fff;}
 
 /* Header */
-header .logo {display:block; margin:45px auto 0; width:115px;}
-header .logo img {display:block;}
+header .logo {background:url('../images/sidetracked-logo.png') no-repeat; display:block; height:116px; margin:30px auto 0; overflow:hidden; padding-bottom:30px; text-indent:-999px; width:116px;}
+.invert header .logo {background:url('../images/sidetracked-logo-white.png') no-repeat;}
 
 header nav {background-color:#121212; padding:10px 0; text-align:center;}
 header nav ul {font-size:0;}

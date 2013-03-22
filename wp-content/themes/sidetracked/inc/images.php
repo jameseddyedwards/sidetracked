@@ -2,14 +2,15 @@
 
 // Add Sidetracked's custom image sizes
 add_theme_support('post-thumbnails');
-add_image_size('thumbnail-square', '195', '195', true);
-add_image_size('small-square', '404', '404', true);
-add_image_size('medium-square', '822', '822', true);
-add_image_size('large-square', '1240', '1240', true);
-add_image_size('small-rectangle', '613', '404', true);
-add_image_size('medium-rectangle', '822', '404', true);
-add_image_size('large-rectangle', '1240', '822', true);
-add_image_size('wide-rectangle', '1240', '404', true);
+add_image_size('square-thumbnail', 195, 195, true);
+add_image_size('square-small', 404, 404, true);
+add_image_size('square-medium', 822, 822, true);
+add_image_size('square-large', 1240, 1240, true);
+add_image_size('rectangle-small', 613, 404, true);
+add_image_size('rectangle-medium', 822, 404, true);
+add_image_size('rectangle-large', 1240, 822, true);
+add_image_size('rectangle-wide', 1240, 404, true);
+add_image_size('rectangle-xl', 9999, 1000, true);
 
 
 /**
@@ -43,14 +44,14 @@ function custom_wmu_image_sizes($sizes) {
 	unset( $sizes['full'] );
 
 	$myimgsizes = array(
-		"thumbnail-square" => __("Thumbnail Square"),
-		"small-square" => __("Small Square"),
-		"medium-square" => __("Medium Square"),
-		"large-square" => __("Large Square"),
-		"small-rectangle" => __("Small Rectangle"),
-		"medium-rectangle" => __("Medium Rectangle"),
-		"large-rectangle" => __("Large Rectangle"),
-		"wide-rectangle" => __("Wide Rectangle")
+		"square-thumbnail" => __("Square Thumbnail"),
+		"square-small" => __("Square Small"),
+		"square-medium" => __("Square Medium"),
+		"square-large" => __("Square Large"),
+		"rectangle-small" => __("Rectangle Small"),
+		"rectangle-medium" => __("Rectangle Medium"),
+		"rectangle-large" => __("Rectangle Large"),
+		"rectangle-wide" => __("Rectangle Wide")
 	);
 	$newimgsizes = array_merge($sizes, $myimgsizes);
 	
@@ -68,7 +69,7 @@ function sidetracked_gallery($sizes) {
 		$html .= '<ul class="slides">';
 		foreach($images as $image) {
 			$html .= '<li>';
-			$html .= '<img src="' . $image['sizes']['thumbnail-square'] . '" alt="' . $image['alt'] . '" />';
+			$html .= '<img src="' . $image['sizes']['square-thumbnail'] . '" alt="' . $image['alt'] . '" />';
 			$html .= '<p class="flex-caption">' . $image['caption'] . '</p>';
 			// Try to get metadata for image - link
 			// $html .= '<?php wp_get_attachment_metadata($attachment_id);

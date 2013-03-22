@@ -8,11 +8,23 @@
  */
 
 $pageTitle = get_the_title(get_the_id());
+
+$editionNumber = explode(" ", $pageTitle);
+$editionNumber = (int)$editionNumber[1];
+$nextEdition = "Edition " . ($editionNumber + 1);
+$nextEditionId = get_page_by_title($nextEdition);
+$nextEditionLink = get_permalink($nextEditionId);
+
+$previousEdition = "Edition " . ($editionNumber - 1);
+$previousEditionId = get_page_by_title($previousEdition);
+$previousEditionLink = get_permalink($previousEditionId);
+
+$editionsPage = get_page_by_title('Editions');
+$editionsLink = get_permalink($editionsPage->ID);
 $categoryId = get_cat_ID($pageTitle);
-echo $pageTitle;
 $args = array(
-	'posts_per_page'  => 20,
-	'numberposts'     => 20,
+	'posts_per_page'  => -1,
+	'numberposts'     => -1,
 	'offset'          => 0,
 	'category'        => $categoryId,
 	'orderby'         => 'post_date',
@@ -28,8 +40,6 @@ $args = array(
 	'suppress_filters' => true
 );
 $editionPosts = get_posts($args);
-var_dump($editionPosts);
-$i = 0;
 
 ?>
 
@@ -44,12 +54,10 @@ $i = 0;
 
 				<?php foreach($editionPosts as $post) : setup_postdata($post); ?>
 					<?php
-						var_dump($post);
-						$imageSize = get_field('sidetracked_feature_image_size');
-						$image = get_field('sidetracked_feature_image');
-						echo $imageSize;
+						$imageSize = get_field('sidetracked_edition_image_size');
+						$image = get_field('sidetracked_edition_image');
 						if ($imageSize == "") {
-							$imageSize = "small-square"; // Set a default image size so the gallery displays if an image size list is not provided.
+							$imageSize = "square-small"; // Set a default image size so the gallery displays if an image size list is not provided.
 						}
 						$class = sidetracked_get_image_class($imageSize);
 					?>
@@ -61,8 +69,6 @@ $i = 0;
 					</div>
 				<?php endforeach; ?>
 
-
-
 			</div>
 		<?php } ?>
 	</section>
@@ -70,28 +76,28 @@ $i = 0;
 	<section class="next-prev-bar">
 		<div class="block">
 			<span class="prev">
-				<?php if ($pageTitle == "edition 1") { ?>
-					<a class="all-editions" href="">All Editions</a>
+				<?php if ($pageTitle == "Edition 1") { ?>
+					<a class="all-editions" href="<?php echo $editionsLink ?>">All Editions</a>
 				<?php } else { ?>
-					<?php previous_post('%', '', 'no'); ?>
+					<a href="<?php echo $previousEditionLink; ?>"><?php echo $previousEdition; ?></a>
 				<?php } ?>
 			</span>
 			<span class="next">
-				<?php next_post('%', '', 'yes'); ?>
+				<a href="<?php echo $nextEditionLink; ?>"><?php echo $nextEdition; ?></a>
 			</span>
 		</div>
 	</section>
 
 	<section class="next-prev-arrows">
 		<span class="prev">
-			<?php if ($pageTitle == "edition 1") { ?>
-				<a class="all-editions" href="">All Editions</a>
+			<?php if ($pageTitle == "Edition 1") { ?>
+				<a class="all-editions" href="<?php echo $editionsLink ?>">All Editions</a>
 			<?php } else { ?>
-				<?php previous_post('%', '', 'no'); ?>
+				<a href="<?php echo $previousEditionLink; ?>"><?php echo $previousEdition; ?></a>
 			<?php } ?>
 		</span>
 		<span class="next">
-			<?php next_post('%', '', 'yes'); ?>
+			<a href="<?php echo $nextEditionLink; ?>"><?php echo $nextEdition; ?></a>
 		</span>
 	</section>
 

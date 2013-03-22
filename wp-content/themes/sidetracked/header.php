@@ -73,10 +73,15 @@ $testSite = strpos($_SERVER['HTTP_HOST'], 'localhost') !== false ? true : false;
 	 * as styles, scripts, and meta tags.
 	 */
 	wp_head();
+
+	$invert = '';
+	if (is_single()) {
+		$invert = 'invert';
+	}
 ?>
 </head>
 
-<body <?php body_class(); ?>>
+<body <?php body_class($invert); ?>>
 
 <?php get_template_part('content', 'body-scripts'); ?>
 
@@ -100,7 +105,7 @@ $testSite = strpos($_SERVER['HTTP_HOST'], 'localhost') !== false ? true : false;
 	</nav>
 
 	<a class="logo" href="<?php echo esc_url(home_url('/')); ?>" title="<?php echo esc_attr(get_bloginfo('name', 'display')); ?>" rel="home">
-		<img src="<?php bloginfo('template_url'); ?>/images/sidetracked-logo.png" alt="<?php bloginfo('name'); ?>" />
+		<?php bloginfo('name'); ?>
 	</a>
 
 </header>

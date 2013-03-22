@@ -8,19 +8,19 @@ function sidetracked_get_image_class($imageSize) {
 	if ($imageSize != "") {
 
 		switch ($imageSize) {
-		case "large-square":
-		case "large-rectangle":
-		case "wide-rectangle":
+		case "square-large":
+		case "rectangle-large":
+		case "rectangle-wide":
 			$class = "twelve";
 			break;
-		case "medium-rectangle":
-		case "medium-square":
+		case "rectangle-medium":
+		case "square-medium":
 			$class = "eight";
 			break;
-		case "small-rectangle":
+		case "rectangle-small":
 			$class = "six";
 			break;
-		case "thumbnail-square":
+		case "square-thumbnail":
 			$class = "two";
 			break;
 		default:

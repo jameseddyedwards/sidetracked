@@ -25,6 +25,9 @@ the gridpak.js file to use '.block' as it's container.
 .span img {width:100%;}
 .span a,
 .span a img {display:block;}
+.span a {position:relative;}
+.span a span {display:none; height:100%; left:0; position:absolute; top:0; width:100%;}
+.span a:hover span {background-color:rgba(0,0,0,0.5); display:block;}
 
 /* 1. 2 Column Grid 0px - 319px 
 ----------------------------------------------------------------------------- 

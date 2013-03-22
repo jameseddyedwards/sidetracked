@@ -39,10 +39,10 @@
  */
 
 /* Includes */
-include TEMPLATEPATH . '/inc/shortcodes.php';
 include TEMPLATEPATH . '/inc/styles.php';
 include TEMPLATEPATH . '/inc/scripts.php';
 include TEMPLATEPATH . '/inc/images.php';
+include TEMPLATEPATH . '/inc/shortcodes.php';
 include TEMPLATEPATH . '/inc/utilities.php';
 
 
