@@ -1,16 +1,7 @@
 <?php
 
-function span_one_shortcode($atts, $content = null) {
-	if ($content != null) {
-		extract(shortcode_atts(array(
-			'url' => '/'
-		), $atts));
-
-		$sizeArray = explode(',', $content);
-
-		return sidetracked_gallery($sizeArray);
-	}
-}
+function blockquote($atts, $content = null) {return '<blockquote><span class="opening"></span>' . do_shortcode($content) . '<span class="closing"></span>';}
+function profile($atts, $content = null) {return '<div class="profile">' . do_shortcode($content) . '</div>';}
 
 function structure_row($atts, $content = null) {return '<div class="row">' . do_shortcode($content) . '</div>';}
 function structure_span_one($atts, $content = null) {return '<div class="span one">' . do_shortcode($content) . '</div>';}
@@ -39,6 +30,9 @@ add_shortcode('nine', 'structure_span_nine');
 add_shortcode('ten', 'structure_span_ten');
 add_shortcode('eleven', 'structure_span_eleven');
 add_shortcode('twelve', 'structure_span_twelve');
+
+add_shortcode('blockquote', 'blockquote');
+add_shortcode('profile', 'profile');
 
 
 ?>

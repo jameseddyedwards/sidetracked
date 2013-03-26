@@ -41,6 +41,14 @@ $postArgs = array(
 );
 $editionPosts = get_posts($postArgs);
 
+$editionsCatId = get_cat_ID("Editions");
+$editionsArgs = array(
+	'child_of'                 => $editionsCatId,
+	'hide_empty'               => 0
+);
+$editionsCategories = get_categories($editionsArgs);
+$numberOfEditions = count($editionsCategories);
+
 ?>
 
 <h1><?php the_title(); ?></h1>
@@ -83,7 +91,11 @@ $editionPosts = get_posts($postArgs);
 				<?php } ?>
 			</span>
 			<span class="next">
-				<a href="<?php echo $nextEditionLink; ?>"><?php echo $nextEdition; ?></a>
+				<?php if ($pageTitle == "Edition " . $numberOfEditions) { ?>
+					<a class="all-editions" href="<?php echo $editionsLink ?>">All Editions</a>
+				<?php } else { ?>
+					<a href="<?php echo $nextEditionLink; ?>"><?php echo $nextEdition; ?></a>
+				<?php } ?>
 			</span>
 		</div>
 	</section>
@@ -97,7 +109,11 @@ $editionPosts = get_posts($postArgs);
 			<?php } ?>
 		</span>
 		<span class="next">
-			<a href="<?php echo $nextEditionLink; ?>"><?php echo $nextEdition; ?></a>
+			<?php if ($pageTitle == "Edition " . $numberOfEditions) { ?>
+				<a class="all-editions" href="<?php echo $editionsLink ?>">All Editions</a>
+			<?php } else { ?>
+				<a href="<?php echo $nextEditionLink; ?>"><?php echo $nextEdition; ?></a>
+			<?php } ?>
 		</span>
 	</section>
 

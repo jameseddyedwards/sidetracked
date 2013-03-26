@@ -6,14 +6,10 @@
 .hide-text {background-color:transparent; border:0; color:transparent; font:0/0 a; text-shadow:none;}
 .top {margin-top:0;}
 
-blockquote,
-blockquote p,
-blockquote a {font-size:18px; line-height:30px; font-style:italic;}
-blockquote,
-blockquote p {color:#8d8d8d; display:block; margin:10px 0 30px;}
-blockquote a {color:#005580;}
-blockquote span,
-blockquote em {clear:both; display:block; font:14px Arial, Helvetica, sans-serif; line-height:30px; margin-left:30px; color:#999999;}
+blockquote {color:#313131; font:18px/30px "proxima-nova", helvetica, arial, sans-serif; text-transform:uppercase;}
+blockquote span {background:#dedede; display:block; height:35px;}
+blockquote span.opening {background:#dedede url('../images/sprite/icons.png') no-repeat left -234px; margin-bottom:30px;}
+blockquote span.closing {background:#dedede url('../images/sprite/icons.png') no-repeat right -273px; margin:30px 0;}
 
 address {display:block; margin-bottom:20px; line-height:20px; font-style:normal;}
 small {font-size:100%;}
