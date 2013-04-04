@@ -7,26 +7,11 @@
  * @since Sidetracked 1.0
  */
 
-$pageTitle = get_the_title();
-
-$editionNumber = explode(" ", $pageTitle);
-$editionNumber = (int)$editionNumber[1];
-$nextEdition = "Edition " . ($editionNumber + 1);
-$nextEditionId = get_page_by_title($nextEdition);
-$nextEditionLink = get_permalink($nextEditionId);
-
-$previousEdition = "Edition " . ($editionNumber - 1);
-$previousEditionId = get_page_by_title($previousEdition);
-$previousEditionLink = get_permalink($previousEditionId);
-
-$editionsPage = get_page_by_title('Editions');
-$editionsLink = get_permalink($editionsPage->ID);
-$categoryId = get_cat_ID($pageTitle);
 $postArgs = array(
 	'posts_per_page'  => -1,
 	'numberposts'     => -1,
 	'offset'          => 0,
-	'category'        => $categoryId,
+	'category'        => '',
 	'orderby'         => 'post_date',
 	'order'           => 'DESC',
 	'include'         => '',
@@ -41,17 +26,16 @@ $postArgs = array(
 );
 $posts = get_posts($postArgs);
 
-$editionsCatId = get_cat_ID("Editions");
-$editionsArgs = array(
-	'child_of'                 => $editionsCatId,
-	'hide_empty'               => 0
-);
-$editionsCategories = get_categories($editionsArgs);
-$numberOfEditions = count($editionsCategories);
-
 ?>
 
 <h1><?php the_title(); ?></h1>
+
+<hr />
+
+<?php /* Our footer navigation menu. */ ?>
+<?php wp_nav_menu(array(
+	'theme_location'	=> 'navigation-survive'
+)); ?>
 
 <?php while (have_posts()) : the_post(); ?>
 	
@@ -60,7 +44,7 @@ $numberOfEditions = count($editionsCategories);
 		<?php if (isset($editionPosts)) { ?>
 			<div class="row">
 
-				<?php foreach($posts as $post) : setup_postdata($post); ?>
+				<?php foreach($editionPosts as $post) : setup_postdata($post); ?>
 					<?php
 						$imageSize = get_field('sidetracked_edition_image_size');
 						$image = get_field('sidetracked_edition_image');

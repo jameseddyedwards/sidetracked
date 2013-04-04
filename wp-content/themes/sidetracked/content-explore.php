@@ -7,27 +7,12 @@
  * @since Sidetracked 1.0
  */
 
-$pageTitle = get_the_title();
-
-$editionNumber = explode(" ", $pageTitle);
-$editionNumber = (int)$editionNumber[1];
-$nextEdition = "Edition " . ($editionNumber + 1);
-$nextEditionId = get_page_by_title($nextEdition);
-$nextEditionLink = get_permalink($nextEditionId);
-
-$previousEdition = "Edition " . ($editionNumber - 1);
-$previousEditionId = get_page_by_title($previousEdition);
-$previousEditionLink = get_permalink($previousEditionId);
-
-$editionsPage = get_page_by_title('Editions');
-$editionsLink = get_permalink($editionsPage->ID);
-$categoryId = get_cat_ID($pageTitle);
 $postArgs = array(
-	'posts_per_page'  => -1,
+	'posts_per_page'  => 12,
 	'numberposts'     => -1,
 	'offset'          => 0,
-	'category'        => $categoryId,
-	'orderby'         => 'post_date',
+	'category'        => '',
+	'orderby'         => 'rand',
 	'order'           => 'DESC',
 	'include'         => '',
 	'exclude'         => '',
@@ -41,40 +26,55 @@ $postArgs = array(
 );
 $posts = get_posts($postArgs);
 
-$editionsCatId = get_cat_ID("Editions");
-$editionsArgs = array(
-	'child_of'                 => $editionsCatId,
-	'hide_empty'               => 0
-);
-$editionsCategories = get_categories($editionsArgs);
-$numberOfEditions = count($editionsCategories);
-
 ?>
 
 <h1><?php the_title(); ?></h1>
+
+<hr />
+
+<?php 
+
+/*
+$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+
+$wp_query = new WP_Query($args);
+while ( have_posts() ) : the_post();
+    the_title()
+endwhile;
+
+*/
+
+?>
+
+<?php $posts_array = get_posts($args); ?>
+
+<!-- then the pagination links -->
+<?php next_posts_link( '&larr; Older posts' ); ?>
+<?php previous_posts_link( 'Newer posts &rarr;' ); ?>
 
 <?php while (have_posts()) : the_post(); ?>
 	
 	<section class="block" id="body-content">
 
-		<?php if (isset($editionPosts)) { ?>
+		<?php if (isset($posts)) { ?>
 			<div class="row">
 
 				<?php foreach($posts as $post) : setup_postdata($post); ?>
 					<?php
-						$imageSize = get_field('sidetracked_edition_image_size');
 						$image = get_field('sidetracked_edition_image');
-						if ($imageSize == "") {
-							$imageSize = "square-small"; // Set a default image size so the gallery displays if an image size list is not provided.
-						}
-						$class = sidetracked_get_image_class($imageSize);
+						$imageSize = 'square-small';
 					?>
-					<div class="span <?php echo $class; ?>">
-						<a href="<?php the_permalink(); ?>">
-							<span><?php the_title(); ?></span>
-							<img src="<?php echo $image['sizes'][$imageSize]; ?>" alt="<?php echo $image['alt']; ?>" />
-						</a>
-					</div>
+					<?php if ($image) { ?>
+						<div class="span four">
+							<a href="<?php the_permalink(); ?>">
+								<span class="title-bar">
+									<span><?php the_title(); ?></span>
+									<span><?php the_excerpt_rss(); ?></span>
+								</span>
+								<img src="<?php echo $image['sizes'][$imageSize]; ?>" alt="<?php echo $image['alt']; ?>" />
+							</a>
+						</div>
+					<?php } ?>
 				<?php endforeach; ?>
 
 			</div>

@@ -6,6 +6,8 @@
 .hide-text {background-color:transparent; border:0; color:transparent; font:0/0 a; text-shadow:none;}
 .top {margin-top:0;}
 
+hr {border-bottom:1px dotted #3c3c3c;}
+
 blockquote {color:#313131; font:18px/30px "proxima-nova", helvetica, arial, sans-serif; text-transform:uppercase;}
 blockquote span {background:#dedede; display:block; height:35px;}
 blockquote span.opening {background:#dedede url('../images/sprite/icons.png') no-repeat left -234px; margin-bottom:30px;}
@@ -23,6 +25,19 @@ cite {font-style:normal;}
 .clearfix:before, .subscribe:before, .container:before,
 .clearfix:after, .subscribe:after, .container:after {display:table; content:"";}
 .clearfix:after, .subscribe:after, .container:after {clear:both;}
+
+.title-bar {background-color:rgba(0,0,0,0.5); bottom:0; height:50px; left:0; padding:5px 20px; position:absolute; width:100%;
+	box-sizing:border-box;
+	moz-box-sizing:border-box;
+	webkit-box-sizing:border-box;
+	background-clip:padding-box !important;
+	moz-background-clip:padding-box !important;
+	webkit-background-clip:padding-box !important;
+}
+.title-bar span {display:block; text-align:center;}
+.title-bar .title {}
+.title-bar .excerpt {}
+
 
 .next-prev-arrows span {background:url('../images/sprite/icons.png') no-repeat; height:84px; margin-top:-42px; overflow:hidden; position:fixed; text-indent:-999px; top:50%; width:84px; z-index:10;}
 .next-prev-arrows .prev {background-position:0 -116px; left:0;}

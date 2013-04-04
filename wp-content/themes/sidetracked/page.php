@@ -15,17 +15,17 @@
 
 get_header();
 
+$pageTitle = strtolower(get_the_title());
 $parentPage = get_post($post->post_parent);
 $parentPageTitle = strtolower($parentPage->post_title);
 
-switch ($parentPageTitle) {
-	case "editions":
-		$content = "content-edition";
-		break;
-	default:
-		$content = "content";
-}
-
+if ($parentPageTitle == 'editions' || $pageTitle == 'editions') {
+	$content = 'content-edition';
+} else if ($parentPageTitle == 'explore' || $pageTitle == 'explore') {
+	$content = 'content-explore';
+} else if ($parentPageTitle == 'survive' || $pageTitle == 'survive') {
+	$content = 'content-survive';
+} 
 
 ?>
 <?php /* ID required for screen readers link */ ?>

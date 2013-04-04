@@ -16,7 +16,9 @@ $featureImageObj = get_field('sidetracked_feature_image');
 
 	<?php while (have_posts()) : the_post(); ?>
 
-		<img class="feature-image" src="<?php echo $featureImageObj['sizes']['rectangle-xl']; ?>" alt="<?php echo $featureImageObj['alt']; ?>" />
+		<?php if ($featureImageObj) { ?>
+			<img class="feature-image" src="<?php echo $featureImageObj['sizes']['rectangle-xl']; ?>" alt="<?php echo $featureImageObj['alt']; ?>" />
+		<?php } ?>
 		
 		<article class="block">
 

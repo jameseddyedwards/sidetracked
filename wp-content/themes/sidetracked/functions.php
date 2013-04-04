@@ -52,12 +52,23 @@ include TEMPLATEPATH . '/inc/utilities.php';
 add_theme_support('menus');
 register_nav_menu('navigation', __('Navigation', 'sidetracked'));
 register_nav_menu('navigation-footer', __('Footer Navigation', 'sidetracked'));
+register_nav_menu('navigation-survive', __('Survive Navigation', 'sidetracked'));
 
 // Add default posts and comments RSS feed links to <head>.
 add_theme_support('automatic-feed-links');
 
 // This theme supports a variety of post formats.
 add_post_type_support('article', 'post-formats');
+
+// Update the Excerpt styling
+function custom_excerpt_length($length) {
+	return 6;
+}
+function new_excerpt_more($more) {
+	return '';
+}
+add_filter('excerpt_more', 'new_excerpt_more');
+add_filter('excerpt_length', 'custom_excerpt_length', 999);
 
 // add post-formats to post_type 'my_custom_post_type'
 

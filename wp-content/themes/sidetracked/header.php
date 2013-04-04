@@ -75,7 +75,8 @@ $testSite = strpos($_SERVER['HTTP_HOST'], 'localhost') !== false ? true : false;
 	wp_head();
 
 	$invert = '';
-	if (is_single()) {
+	$isNewsPage = get_the_title($post->post_parent) == 'News' ? true : false;
+	if (is_single() || $isNewsPage) {
 		$invert = 'invert';
 	}
 ?>
