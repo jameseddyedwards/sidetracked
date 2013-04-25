@@ -21,22 +21,19 @@ cite {font-style:normal;}
 .access a.assistive-text:active,
 .access a.assistive-text:focus {background:#eee; border-bottom:1px solid #ddd; color:#1982d1; clip:auto !important; font-size:12px; position:absolute; text-decoration:underline; top:0; left:7.6%;}
 
-.clearfix, .subscribe, .container {*zoom:1;}
-.clearfix:before, .subscribe:before, .container:before,
-.clearfix:after, .subscribe:after, .container:after {display:table; content:"";}
-.clearfix:after, .subscribe:after, .container:after {clear:both;}
+.cf, .subscribe, .container {*zoom:1;}
+.cf:before, .subscribe:before, .container:before,
+.cf:after, .subscribe:after, .container:after {display:table; content:"";}
+.cf:after, .subscribe:after, .container:after {clear:both;}
 
-.title-bar {background-color:rgba(0,0,0,0.5); bottom:0; height:50px; left:0; padding:5px 20px; position:absolute; width:100%;
+a .title-bar {background-color:rgba(0,0,0,0.8); bottom:0; display:none; height:50px; left:0; padding:8px 20px 0; position:absolute; width:100%;
 	box-sizing:border-box;
 	moz-box-sizing:border-box;
 	webkit-box-sizing:border-box;
-	background-clip:padding-box !important;
-	moz-background-clip:padding-box !important;
-	webkit-background-clip:padding-box !important;
 }
-.title-bar span {display:block; text-align:center;}
-.title-bar .title {}
-.title-bar .excerpt {}
+a:hover .title-bar {display:block;}
+a .title-bar span {color:#8b8b8b; display:block; font-size:17px; text-align:center; text-transform:uppercase;}
+a .title-bar .title {color:#fff; font-family:georgia, serif; font-style:italic;}
 
 
 .next-prev-arrows span {background:url('../images/sprite/icons.png') no-repeat; height:84px; margin-top:-42px; overflow:hidden; position:fixed; text-indent:-999px; top:50%; width:84px; z-index:10;}

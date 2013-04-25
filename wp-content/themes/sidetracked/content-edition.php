@@ -57,7 +57,7 @@ $numberOfEditions = count($editionsCategories);
 	
 	<section class="block" id="body-content">
 
-		<?php if (isset($editionPosts)) { ?>
+		<?php if (isset($posts)) { ?>
 			<div class="row">
 
 				<?php foreach($posts as $post) : setup_postdata($post); ?>
@@ -68,13 +68,20 @@ $numberOfEditions = count($editionsCategories);
 							$imageSize = "square-small"; // Set a default image size so the gallery displays if an image size list is not provided.
 						}
 						$class = sidetracked_get_image_class($imageSize);
+						$pageLink = get_field('sidetracked_advert_custom_link') != '' ? get_field('sidetracked_advert_custom_link') : get_field('sidetracked_advert_page_link');
+						$pageLink = get_field('sidetracked_is_advert') ? $pageLink : get_permalink();
 					?>
-					<div class="span <?php echo $class; ?>">
-						<a href="<?php the_permalink(); ?>">
-							<span><?php the_title(); ?></span>
-							<img src="<?php echo $image['sizes'][$imageSize]; ?>" alt="<?php echo $image['alt']; ?>" />
-						</a>
-					</div>
+
+					<?php if ($image != '') { ?>
+						<div class="span <?php echo $class; ?>">
+							<a href="<?php echo $pageLink ?>">
+								<span class="title-bar">
+									<span class="total"><?php the_title(); ?></span>
+								</span>
+								<img src="<?php echo $image['sizes'][$imageSize]; ?>" alt="<?php echo $image['alt']; ?>" />
+							</a>
+						</div>
+					<?php } ?>
 				<?php endforeach; ?>
 
 			</div>

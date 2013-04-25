@@ -78,7 +78,7 @@ comment_form($fields);
 		<div class="span9">
 			<hr />
 
-			<div class="next-previous clearfix">
+			<div class="next-previous cf">
 				<div class="previous" title="Previous Post">
 					<?php previous_post('%', '', 'yes'); ?>
 				</div>

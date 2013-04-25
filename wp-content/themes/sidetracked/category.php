@@ -9,8 +9,16 @@
 
 get_header();
 
+$contentType = sidetracked_is_news_landing() ? 'content-news-landing' : 'content';
 ?>
 
+<?php // ID required for screen readers link ?>
+<section id="body-content">
+	<?php get_template_part($contentType); ?>
+</section>
+
+
+<?php /*
 <?php if (have_posts()) : ?>
 	<?php
 	global $post;
@@ -62,7 +70,7 @@ get_header();
 						<!-- Category List -->
 						<ul id="category-links" class="post-categories">
 							<?php
-							$categories = get_categories(/*array('number'=>12)*/);
+							$categories = get_categories(/*array('number'=>12));
 							foreach($categories as $category) {
 								$obj = get_object_vars($category);
 								$catId = $obj[cat_ID];
@@ -113,8 +121,6 @@ get_header();
 	</div>
 </div>
 
-<?php
+<?php */ ?>
 
-get_footer();
-
-?>
+<?php get_footer(); ?>

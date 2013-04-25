@@ -57,10 +57,10 @@ $testSite = strpos($_SERVER['HTTP_HOST'], 'localhost') !== false ? true : false;
 ?>
 </title>
 
-<!-- TypeKit -->
+<!-- TypeKit 
 <script type="text/javascript" src="//use.typekit.net/kqu8zyf.js"></script>
 <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
-
+-->
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 <!--[if lt IE 9]>
@@ -74,9 +74,10 @@ $testSite = strpos($_SERVER['HTTP_HOST'], 'localhost') !== false ? true : false;
 	 */
 	wp_head();
 
-	$invert = '';
-	$isNewsPage = get_the_title($post->post_parent) == 'News' ? true : false;
-	if (is_single() || $isNewsPage) {
+	$invert = false;
+	$invert = get_the_title($post->post_parent) == 'News' ? true : false;
+	$invert = sidetracked_is_news_landing() ? true : false;
+	if (is_single() || $invert) {
 		$invert = 'invert';
 	}
 ?>

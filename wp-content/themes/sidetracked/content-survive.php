@@ -7,11 +7,12 @@
  * @since Sidetracked 1.0
  */
 
+$catId = get_cat_ID(get_the_title());
 $postArgs = array(
-	'posts_per_page'  => -1,
-	'numberposts'     => -1,
+	'posts_per_page'  => 7,
+	'numberposts'     => 7,
 	'offset'          => 0,
-	'category'        => '',
+	'category'        => $catId,
 	'orderby'         => 'post_date',
 	'order'           => 'DESC',
 	'include'         => '',
@@ -25,38 +26,43 @@ $postArgs = array(
 	'suppress_filters' => true
 );
 $posts = get_posts($postArgs);
-
+$count = 0;
 ?>
 
-<h1><?php the_title(); ?></h1>
+<h1>Survive</h1>
 
 <hr />
 
-<?php /* Our footer navigation menu. */ ?>
+<?php /* Survive navigation menu */ ?>
 <?php wp_nav_menu(array(
-	'theme_location'	=> 'navigation-survive'
+	'theme_location'	=> 'navigation-survive',
+	'menu_class'		=> 'survive-menu'
 )); ?>
 
 <?php while (have_posts()) : the_post(); ?>
 	
 	<section class="block" id="body-content">
 
-		<?php if (isset($editionPosts)) { ?>
+		<?php if (isset($posts)) { ?>
 			<div class="row">
 
-				<?php foreach($editionPosts as $post) : setup_postdata($post); ?>
+				<?php foreach($posts as $post) : setup_postdata($post); ?>
 					<?php
+						$count = $count + 1;
 						$imageSize = get_field('sidetracked_edition_image_size');
 						$image = get_field('sidetracked_edition_image');
-						if ($imageSize == "") {
+						if ($count == 1) {
+							$imageSize = "rectangle-medium";
+						} elseif ($imageSize == "") {
 							$imageSize = "square-small"; // Set a default image size so the gallery displays if an image size list is not provided.
 						}
-						$class = sidetracked_get_image_class($imageSize);
 					?>
-					<div class="span <?php echo $class; ?>">
+					<div class="span <?php echo $count == 1 ? 'twelve' : 'four'; ?>">
 						<a href="<?php the_permalink(); ?>">
-							<span><?php the_title(); ?></span>
 							<img src="<?php echo $image['sizes'][$imageSize]; ?>" alt="<?php echo $image['alt']; ?>" />
+							<span class="title-bar">
+								<span><?php the_title(); ?></span>
+							</span>
 						</a>
 					</div>
 				<?php endforeach; ?>

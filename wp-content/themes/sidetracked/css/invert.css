@@ -1,0 +1,6 @@
+body.invert {background-color:#fff;}
+
+.invert header .logo {background:url('../images/sidetracked-logo-white.png') no-repeat;}
+
+.invert h3,
+.invert h3 a {color:#1a1a1a;}

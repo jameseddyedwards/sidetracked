@@ -1,0 +1,60 @@
+<div id="sidetracked-tv-{{gallery_id}}" class="sidetracked-tv" data-version="{{version}}"{{#gallery_width}} style="max-width: {{gallery_width}};"{{/gallery_width}}>
+	
+	<div class="twelve">
+		{{#featured}}
+			<iframe id="vimeography-embed-{{gallery_id}}" src="http://player.vimeo.com/video/{{id}}?title=0&byline=0&portrait=0&api=1&player_id=vimeography-embed-{{gallery_id}}" width="{{width}}" height="{{height}}" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+		{{/featured}}
+	</div>
+
+	<div class="thumbs">
+		<div class="row cf">
+			{{#info}}
+				<div class="span four">
+					<img src="{{thumbnail_large}}" alt="{{title}}" data-id="{{id}}" width="186" height="105" />
+				</div>
+			{{/info}}
+		</div>
+	</div>
+
+</div> 
+
+<script charset="utf-8" type="text/javascript">
+
+	(function($){
+		$(document).ready(function(){
+	
+			$('#sidetracked-tv-{{gallery_id}}').fitVids();			
+			
+			$('#sidetracked-tv-{{gallery_id}} .thumbs img').click(function(e) {
+				var id = $(this).attr('data-id');
+				var src = 'http://player.vimeo.com/video/'+id+'?title=0&byline=0&portrait=0&autoplay=0&api=1&player_id=vimeography-embed-{{gallery_id}}';							
+				
+				$('#vimeography-embed-{{gallery_id}}').animate({'opacity':0}, 300, 'linear', function(){
+					$(this).attr('src', src); 
+					$(this).load(function(){
+						$(this).animate({'opacity':1}, 300);
+					});
+				});
+				
+	    		e.preventDefault();
+	
+			});
+							
+		});
+	})(jQuery)
+	
+</script>
+
+{{#dynamic_css}}
+  {{#exists}}
+    <style type="text/css">
+  {{/exists}}
+  
+  {{#settings}}
+    #vimeography-gallery-{{gallery_id}}{{target}} { {{attribute}}: {{value}}; }
+  {{/settings}}
+  
+  {{#exists}}
+    </style>
+  {{/exists}}  
+{{/dynamic_css}}

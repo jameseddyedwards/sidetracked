@@ -25,10 +25,17 @@ if ($parentPageTitle == 'editions' || $pageTitle == 'editions') {
 	$content = 'content-explore';
 } else if ($parentPageTitle == 'survive' || $pageTitle == 'survive') {
 	$content = 'content-survive';
-} 
+} else if ($pageTitle == 'news') {
+	$content = 'content-news-landing';
+} else if ($parentPageTitle == 'news') {
+	$content = 'content-news';
+} else {
+	$content = 'content';	
+}
 
 ?>
-<?php /* ID required for screen readers link */ ?>
+
+<?php // ID required for screen readers link ?>
 <section id="body-content">
 	<?php get_template_part($content); ?>
 </section>

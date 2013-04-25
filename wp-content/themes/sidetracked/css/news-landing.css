@@ -1,0 +1,14 @@
+.news-article {margin-bottom:50px;}
+
+.news .posted-on {background:#ebebeb url('../images/background/stone.png') repeat; height:400px; position:relative;}
+.news .posted-on .date {bottom:6px; padding-left:10px; position:absolute; text-align:right; right:10px;}
+.news .posted-on span {color:#1a1a1a; display:block; font:22px/24px "proxima-nova", helvetica, arial, sans-serif;  text-transform:uppercase;}
+.news .posted-on span em {font-style:normal; font-size:23px;}
+
+.news .news-article-image a,
+.news .news-article-image a img {display:block;}
+
+.news .read-more {color:#3e6e8b;}
+
+h3 {margin:15px 0;}
+p {color:#1a1a1a;}

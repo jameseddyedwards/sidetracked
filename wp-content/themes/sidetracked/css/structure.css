@@ -34,7 +34,7 @@ Span 2: 100%
 ----------------------------------------------------------------------------- */
 @media screen and (min-width: 0px) and (max-width: 319px) {
 	.row {margin-left:-12px;}
-	.span {border-left-width:12px; height:100px; padding:0 12px;}
+	.span {border-left-width:12px; padding:0 12px;}
 
 	.one {width:50%;}
 	.two,
@@ -51,8 +51,8 @@ Span 4: 66.0%
 Span 5: 83.0%
 Span 6: 1000%
 ----------------------------------------------------------------------------- */
-@media screen and (min-width: 320px) and (max-width: 919px) {
-	.span {padding:0 2%;}
+@media screen and (min-width: 320px) and (max-width: 768px) {
+	.span {padding:0 2%; width:100%;}
 	.row .span:first-child {margin-left:0;}
 
 	.one {width:15.0%;}
@@ -79,8 +79,8 @@ Span 10: 83.3333333333%
 Span 11: 91.6666666667%
 Span 12: 100%
 ----------------------------------------------------------------------------- */
-@media screen and (min-width: 920px) {
-	.row {margin-left:-12px; padding:0 12px;}
+@media screen and (min-width: 769px) {
+	.row {margin-left:-12px;}
 	.span {border-left-width:12px;}
 
 	.one {width:8.33333333333%;}

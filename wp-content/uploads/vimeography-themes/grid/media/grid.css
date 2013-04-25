@@ -1,0 +1,10 @@
+/* Browser Resets */
+.sidetracked-tv a:active,
+.sidetracked-tv a:focus {outline: none;}
+
+
+/* Custom Modifications */
+
+.sidetracked-tv {}
+.sidetracked-tv .four {height:210px; overflow:hidden;}
+.sidetracked-tv img {width:100%;}

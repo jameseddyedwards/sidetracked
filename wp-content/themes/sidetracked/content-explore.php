@@ -44,17 +44,64 @@ endwhile;
 
 */
 
+$exploreCatId = get_cat_ID("Explore");
+$exploreArgs = array(
+	'child_of'                 => $exploreCatId,
+	'hide_empty'               => 0
+);
+$exploreCategories = get_categories($exploreArgs);
+$catParent;
+
+$args = array(
+ 'child_of' => $exploreCatId,
+ 'hierarchy' => 1
+)
+
+
 ?>
 
-<?php $posts_array = get_posts($args); ?>
+<?php //$posts_array = get_posts($args); ?>
 
 <!-- then the pagination links -->
 <?php next_posts_link( '&larr; Older posts' ); ?>
 <?php previous_posts_link( 'Newer posts &rarr;' ); ?>
 
+
+<section class="block">
+	<div class="row">
+		<div class="span four">
+			<p>Enter your destination or adventure and press search</p>
+			<?php get_search_form(); ?>
+
+			<!-- Category List -->
+			<ul class="post-categories">
+				<?php wp_list_categories($args); ?>
+				<?php
+				//$numberOfEditions = count($editionsCategories);
+
+				//$categories = get_categories(array('ID'=>3));
+				foreach($exploreCategories as $categoryParent) {
+					$obj = get_object_vars($categoryParent);
+					//var_dump($obj);
+					$catId = $obj[cat_ID];
+					$catName = $obj[name];
+					$catURL = esc_url(home_url('/')) . '?cat=' . $catId;
+					?>
+					<li>
+						<a<?php echo $currentCategoryId == $catId ? ' class="current"' : ''; ?> rel="category" title="View latest posts in <?php echo $catName; ?>" href="<?php echo $catURL; ?>"><?php echo $catName; ?></a>
+					</li>
+
+					<?php
+				}
+				?>
+			</ul>
+		</div>
+	</div>
+</section>
+
 <?php while (have_posts()) : the_post(); ?>
 	
-	<section class="block" id="body-content">
+	<section class="block">
 
 		<?php if (isset($posts)) { ?>
 			<div class="row">
@@ -68,7 +115,7 @@ endwhile;
 						<div class="span four">
 							<a href="<?php the_permalink(); ?>">
 								<span class="title-bar">
-									<span><?php the_title(); ?></span>
+									<span class="title"><?php the_title(); ?></span>
 									<span><?php the_excerpt_rss(); ?></span>
 								</span>
 								<img src="<?php echo $image['sizes'][$imageSize]; ?>" alt="<?php echo $image['alt']; ?>" />

@@ -1,6 +1,15 @@
 /* Page */
 
 
+/* Survive */
+
+.menu-survive-navigation-container {margin:-43px 0 50px; text-align:center;}
+.survive-menu {border-left:1px solid #2e2e2e; display:inline-block; margin:0 auto;}
+.survive-menu li {display:inline-block; float:left;}
+.survive-menu li a {background-color:#000; border:1px solid #2e2e2e; border-left:0; color:#575757; font-size:28px; font-weight:bold; padding:6px 20px; text-transform:uppercase;}
+.survive-menu li.current-menu-item a,
+.survive-menu li a:hover {background-color:#2e2e2e; color:#fff;}
+
 /* Phone - Vertical */
 @media (max-width:480px) {
 

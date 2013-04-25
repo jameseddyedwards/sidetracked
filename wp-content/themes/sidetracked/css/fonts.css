@@ -22,7 +22,7 @@ h6 small {font-weight:normal; color:#2c2c2c;}
 
 h1,
 h1 a {font:45px/45px "proxima-nova", helvetica, arial, sans-serif; text-transform:uppercase;}
-h1 {margin:0 0 25px; text-align:center;}
+h1 {margin:0 0 45px; text-align:center;}
 h1 small {font-size:18px;}
 
 h2,
@@ -31,7 +31,7 @@ h2 {margin:0 0 60px; text-align:center;}
 h2 small {font-size:18px;}
 
 h3,
-h3 a {font:24px/30px din-light, helvetica, arial;}
+h3 a {font:26px/36px "proxima-nova", helvetica, arial, sans-serif; text-transform:uppercase;}
 h3 {}
 h3 small {font-size:14px;}
 

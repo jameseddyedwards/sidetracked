@@ -69,6 +69,7 @@ get_header();
 
 			<!-- Category List -->
 			<ul class="post-categories">
+				<?php wp_list_categories(); ?>
 				<?php
 				$categories = get_categories(array('number'=>12));
 				foreach($categories as $category) {

@@ -29,9 +29,9 @@ $featureImageObj = get_field('sidetracked_feature_image');
 
 			<h2><?php the_field('sidetracked_sub_title'); ?></h2>
 
-			<div class="row">
-				<?php the_content(); ?>
-			</div>
+			
+			<?php the_content(); ?>
+			
 
 			<?php wp_link_pages(array('before' => '<div class="page-link"><span>' . __( 'Pages:', 'sidetracked' ) . '</span>', 'after' => '</div>')); ?>
 
@@ -106,7 +106,7 @@ $featureImageObj = get_field('sidetracked_feature_image');
 			<?php } ?>
 
 
-			<div class="next-previous clearfix">
+			<div class="next-previous cf">
 				<div class="previous">
 					<?php previous_post_link('%', '', 'yes'); ?>
 				</div>
