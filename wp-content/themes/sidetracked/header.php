@@ -57,10 +57,12 @@ $testSite = strpos($_SERVER['HTTP_HOST'], 'localhost') !== false ? true : false;
 ?>
 </title>
 
-<!-- TypeKit 
-<script type="text/javascript" src="//use.typekit.net/kqu8zyf.js"></script>
-<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
--->
+<?php if ($testSite) { ?>
+	<!-- TypeKit -->
+	<script type="text/javascript" src="//use.typekit.net/kqu8zyf.js"></script>
+	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+<?php } ?>
+
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 <!--[if lt IE 9]>
@@ -107,7 +109,7 @@ $testSite = strpos($_SERVER['HTTP_HOST'], 'localhost') !== false ? true : false;
 	</nav>
 
 	<a class="logo" href="<?php echo esc_url(home_url('/')); ?>" title="<?php echo esc_attr(get_bloginfo('name', 'display')); ?>" rel="home">
-		<?php bloginfo('name'); ?>
+		<img src="../images/datasift-logo.png" alt="<?php bloginfo('name'); ?>" width="300" />
 	</a>
 
 </header>

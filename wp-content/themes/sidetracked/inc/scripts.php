@@ -15,6 +15,7 @@ function ahumphreys_load_javascript_files() {
 	//wp_register_script('fitvids_js', get_template_directory_uri() . '/js/fitvids.js', array('jquery'), '1.0.0', true);
 	wp_register_script('global_js', get_template_directory_uri() . '/js/global.js', array('jquery'), '1.0.0', true);
 	wp_register_script('gridpak_js', get_template_directory_uri() . '/js/gridpak.js', array('jquery'), '1.0.0', true);
+	wp_register_script('retina_js', get_template_directory_uri() . '/js/retina.js', array('jquery'), '1.0.0', true);
 
 
 	/* We add some JavaScript to pages with the comment form

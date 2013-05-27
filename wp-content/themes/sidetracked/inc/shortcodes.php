@@ -1,7 +1,11 @@
 <?php
 
-function blockquote($atts, $content = null) {return '<blockquote><span class="opening"></span>' . do_shortcode($content) . '<span class="closing"></span>';}
+function blockquote($atts, $content = null) {return '<blockquote><span class="opening"></span>' . do_shortcode($content) . '<span class="closing"></span></blockquote>';}
+function snippet($atts, $content = null) {return '<blockquote class="snippet">' . do_shortcode($content) . '</blockquote>';}
+function quoted($atts, $content = null) {return '<span class="quoted">' . do_shortcode($content) . '</span>';}
+function strong($atts, $content = null) {return '<strong>' . do_shortcode($content) . '</strong>';}
 function profile($atts, $content = null) {return '<div class="profile">' . do_shortcode($content) . '</div>';}
+function sponsor($atts, $content = null) {return '<div class="sponsor">' . do_shortcode($content) . '</div>';}
 
 function structure_row($atts, $content = null) {return '<div class="row">' . do_shortcode($content) . '</div>';}
 function structure_span_one($atts, $content = null) {return '<div class="span one">' . do_shortcode($content) . '</div>';}
@@ -32,7 +36,11 @@ add_shortcode('eleven', 'structure_span_eleven');
 add_shortcode('twelve', 'structure_span_twelve');
 
 add_shortcode('blockquote', 'blockquote');
+add_shortcode('quoted', 'quoted');
+add_shortcode('snippet', 'snippet');
+add_shortcode('strong', 'strong');
 add_shortcode('profile', 'profile');
+add_shortcode('sponsor', 'sponsor');
 
 
 ?>

@@ -4,12 +4,12 @@ html {font-size:100%; -webkit-text-size-adjust:100%; -ms-text-size-adjust:100%;}
 body {background-color:#000; color:#fff; font-family:Helvetica, Arial, sans-serif;}
 
 /* Header */
-header .logo {background:url('../images/sidetracked-logo.png') no-repeat; display:block; height:116px; margin:30px auto 0; overflow:hidden; padding-bottom:30px; text-indent:-999px; width:116px;}
+header .logo {background:url('../images/sidetracked-logo.png') no-repeat; background-size:116px; display:block; height:116px; margin:30px auto 0; overflow:hidden; padding-bottom:30px; text-indent:-999px; width:116px;}
 
 header nav {background-color:#121212; padding:10px 0; text-align:center;}
 header nav ul {font-size:0;}
 header nav li {display:inline-block;}
-header nav li a {border-right:1px dotted #747474; display:block; font-family:"proxima-nova", helvetica, arial, sans-serif; padding:2px 25px; text-transform:uppercase;}
+header nav li a {border-right:1px dotted #747474; display:block; font-family:"proxima-nova", helvetica, arial, sans-serif; font-size:14px; font-weight:300; letter-spacing:1px; padding:2px 25px; text-transform:uppercase;}
 header nav li:last-child a {border-right:0;}
 header nav li.menu-parent-item {position:relative;}
 header nav li.menu-parent-item > a {background:url('../images/sprite/icons.png') no-repeat right -36px; padding-right:35px;}
@@ -22,22 +22,26 @@ footer {background:#000; padding:50px 0 100px;}
 footer .navigation {float:left; padding:19px 0; width:60%;}
 footer .navigation ul {font-size:0;}
 footer .navigation li {display:inline-block;}
-footer .navigation li a {background:url('../images/sprite/icons.png') no-repeat right 6px; display:block; float:none; font-family:"proxima-nova",sans-serif; padding-right:50px; text-transform:uppercase;}
+footer .navigation li a {background:url('../images/sprite/icons.png') no-repeat right 6px; display:block; float:none; font:14px "proxima-nova", sans-serif; font-weight:300; letter-spacing:1px; padding-right:50px; text-transform:uppercase;}
 footer .navigation li:last-child a {background:none;}
 
 footer .newsletter {float:right; width:418px;}
-footer .newsletter input[type="text"] {background-color:#464646; border:0; float:left; font-style:italic; height:45px; padding:0 20px; width:310px;}
-footer .newsletter input[type="submit"] {background-color:#fff; border:0; border-radius:3px; color:#000; float:right; font-size:26px; font-weight:bold; height:45px; margin-left:-3px; width:70px;}
+footer .newsletter input[type="text"] {background-color:#464646; width:310px;}
+footer .newsletter input[type="submit"] {background-color:#fff; border-radius:3px; color:#232323; font-size:28px; margin-left:-3px; padding:0 10px;}
 
 footer .social {float:right; margin-top:20px;}
 footer .social li {display:inline-block; margin-left:10px;}
-footer .social li a {background:url('../images/sprite/icons.png') no-repeat -3px -56px; display:block; height:40px; overflow:hidden; text-indent:-999px; width:40px;}
+footer .social li a {background:url('../images/sprite/icons.png') no-repeat -3px -56px; display:block; height:40px; margin-left:-3px; overflow:hidden; text-indent:-999px; width:40px;}
 footer .social .rss a {background-position:-3px -56px;}
 footer .social .twitter a {background-position:-44px -56px;}
 footer .social .facebook a {background-position:-85px -56px;}
 footer .social .pinterest a {background-position:-127px -56px;}
 
 footer .copyright {font:12px georgia, serif;}
+
+/* 404 */
+.error404 h4 {margin-bottom:40px;}
+
 
 /* Phone - Vertical */
 @media (max-width:480px) {

@@ -7,40 +7,49 @@
  * @since Sidetracked 1.0
  */
 
-get_header(); ?>
+get_header();
 
-	<div class="container white">
+?>
 
-			<article id="post-0" class="post error404 not-found">
-				<header class="entry-header">
-					<h1 class="entry-title"><?php _e( 'This is somewhat embarrassing, isn&rsquo;t it?', 'sidetracked' ); ?></h1>
-				</header>
+<section class="error404">
 
-				<div class="entry-content">
-					<p><?php _e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching, or one of the links below, can help.', 'sidetracked' ); ?></p>
+	<h1><?php _e('Undiscovered', 'sidetracked'); ?></h1>
 
-					<?php get_search_form(); ?>
+	<hr />
 
-					<?php the_widget( 'WP_Widget_Recent_Posts', array( 'number' => 10 ), array( 'widget_id' => '404' ) ); ?>
+	<section class="block" id="body-content">
 
-					<div class="widget">
-						<h2 class="widgettitle"><?php _e( 'Most Used Categories', 'sidetracked' ); ?></h2>
-						<ul>
-						<?php wp_list_categories( array( 'orderby' => 'count', 'order' => 'DESC', 'show_count' => 1, 'title_li' => '', 'number' => 10 ) ); ?>
-						</ul>
-					</div>
+		<h4 class="center"><?php _e('The page you\'re looking for can\'t be found. You could try browsing or searching our <a href="' . site_url() . '/explore">Explore</a> area or some of the links below may help:', 'sidetracked'); ?></h4>
+		<div class="row">
+			<div class="span twelve">
+				<img src="<?php echo get_bloginfo('template_directory'); ?>/images/img/feature-404.jpg" alt="Undiscovered" />
+			</div>
+		</div>
 
-					<?php
-					/* translators: %1$s: smilie */
-					$archive_content = '<p>' . sprintf( __( 'Try looking in the monthly archives. %1$s', 'sidetracked' ), convert_smilies( ':)' ) ) . '</p>';
-					the_widget( 'WP_Widget_Archives', array('count' => 0 , 'dropdown' => 1 ), array( 'after_title' => '</h2>'.$archive_content ) );
-					?>
+		<div class="row center link-list">
+			<div class="span four">
+				<h3 class="center">Editions</h3>
+				<p><?php _e('Sidetracked is a monthly online journal. View the latest Edition now or explore articles from previous editions.', 'sidetracked'); ?></p>
+			</div>
+			<div class="span four">
+				<h3 class="center">Inspiration</h3>
+				<a href="<?php echo esc_url(home_url('/')); ?>">Explore Sidetracked Content</a>
+				<a href="<?php echo esc_url(home_url('/')); ?>">Survive: Advice &amp; Guides</a>
+				<a href="<?php echo esc_url(home_url('/')); ?>">Survive: Gear Reviews</a>
+				<a href="<?php echo esc_url(home_url('/')); ?>/tv">Sidetracked TV</a>
+				<a href="<?php echo esc_url(home_url('/')); ?>">Adventure and Expedition News</a>
+			</div>
+			<div class="span four">
+				<h3 class="center">Information</h3>
+				<a href="<?php echo esc_url(home_url('/')); ?>/about-us">About Us</a>
+				<a href="<?php echo esc_url(home_url('/')); ?>/get-in-touch">Get In Touch</a>
+				<a href="<?php echo esc_url(home_url('/')); ?>/contribute">Contribute</a>
+				<a href="<?php echo esc_url(home_url('/')); ?>/advertise">Advertise</a>
+			</div>
+		</div>
 
-					<?php the_widget( 'WP_Widget_Tag_Cloud' ); ?>
+	</section>
 
-				</div><!-- .entry-content -->
-			</article><!-- #post-0 -->
-
-	</div><!-- #primary -->
+</section>
 
 <?php get_footer(); ?>

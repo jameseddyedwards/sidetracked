@@ -1,6 +1,6 @@
 <?php
 /**
- * The fall back template for displaying content in the single.php template
+ * The template for displaying a Sidetracked Edition containing multiple articles.
  *
  * @package WordPress
  * @subpackage sidetracked
@@ -48,48 +48,85 @@ $editionsArgs = array(
 );
 $editionsCategories = get_categories($editionsArgs);
 $numberOfEditions = count($editionsCategories);
+$imageSizeCount = 0;
 
 ?>
 
-<h1><?php the_title(); ?></h1>
+<section class="edition">
 
-<?php while (have_posts()) : the_post(); ?>
-	
-	<section class="block" id="body-content">
+	<h1><?php the_title(); ?></h1>
 
-		<?php if (isset($posts)) { ?>
-			<div class="row">
+	<?php while (have_posts()) : the_post(); ?>
+		
+		<section class="block" id="body-content">
 
-				<?php foreach($posts as $post) : setup_postdata($post); ?>
-					<?php
-						$imageSize = get_field('sidetracked_edition_image_size');
-						$image = get_field('sidetracked_edition_image');
-						if ($imageSize == "") {
-							$imageSize = "square-small"; // Set a default image size so the gallery displays if an image size list is not provided.
-						}
-						$class = sidetracked_get_image_class($imageSize);
-						$pageLink = get_field('sidetracked_advert_custom_link') != '' ? get_field('sidetracked_advert_custom_link') : get_field('sidetracked_advert_page_link');
-						$pageLink = get_field('sidetracked_is_advert') ? $pageLink : get_permalink();
-					?>
+			<?php if (isset($posts)) { ?>
+				<div class="row cf">
 
-					<?php if ($image != '') { ?>
-						<div class="span <?php echo $class; ?>">
-							<a href="<?php echo $pageLink ?>">
-								<span class="title-bar">
-									<span class="total"><?php the_title(); ?></span>
-								</span>
-								<img src="<?php echo $image['sizes'][$imageSize]; ?>" alt="<?php echo $image['alt']; ?>" />
-							</a>
-						</div>
+					<?php foreach($posts as $post) : setup_postdata($post); ?>
+						<?php
+							$isAdvert = get_field('sidetracked_is_advert');
+							$imageSize = get_field('sidetracked_edition_image_size');
+							$imageSize = $imageSize == "" ? "square-small" : $imageSize; // Set a default image size so the gallery displays if an image size list is not provided.
+							$class = sidetracked_get_image_class($imageSize);
+							$align = get_field('sidetracked_edition_image_align');
+							$image = get_field('sidetracked_edition_image');
+							$imageSizeCount = $imageSizeCount + sidetracked_get_image_size_count($imageSize);
+							$pageLink = get_field('sidetracked_advert_custom_link') != '' ? get_field('sidetracked_advert_custom_link') : get_field('sidetracked_advert_page_link');
+							$pageLink = $isAdvert ? $pageLink : get_permalink();
+							$articleInfo = get_field('sidetracked_article_info');
+							$info = $articleInfo != "" ? $articleInfo : get_field('sidetracked_sub_title');
+						?>
+
+						<?php if ($image != '') { ?>
+							<div class="span <?php echo $class; ?> <?php echo $align == 'right' ? 'right' : '' ?>">
+								<?php if ($pageLink != '') { ?>
+									<a class="article-img" href="<?php echo $pageLink; ?>">
+								<?php } ?>
+								<?php if (!$isAdvert) { ?>
+									<span class="title-bar">
+										<span class="title"><?php the_title(); ?></span>
+										<span class="sub-title"><?php echo $info; ?></span>
+									</span>
+								<?php } ?>
+									<img src="<?php echo $image['sizes'][$imageSize]; ?>" alt="<?php echo $image['alt']; ?>" />
+								<?php if ($pageLink != '') { ?>
+									</a>
+								<?php } ?>
+							</div>
+						<?php } ?>
+
+						<?php if ($imageSizeCount == 12) { ?>
+							<?php $imageSizeCount = 0; ?>
+							</div>
+							<div class="row cf">
+						<?php } ?>
+					<?php endforeach; ?>
+
+				</div>
+			<?php } ?>
+		</section>
+
+		<section class="next-prev-bar">
+			<div class="block">
+				<span class="prev">
+					<?php if ($pageTitle == "Edition 1") { ?>
+						<a class="all-editions" href="<?php echo $editionsLink ?>">All Editions</a>
+					<?php } else { ?>
+						<a href="<?php echo $previousEditionLink; ?>"><?php echo $previousEdition; ?></a>
 					<?php } ?>
-				<?php endforeach; ?>
-
+				</span>
+				<span class="next">
+					<?php if ($pageTitle == "Edition " . $numberOfEditions) { ?>
+						<a class="all-editions" href="<?php echo $editionsLink ?>">All Editions</a>
+					<?php } else { ?>
+						<a href="<?php echo $nextEditionLink; ?>"><?php echo $nextEdition; ?></a>
+					<?php } ?>
+				</span>
 			</div>
-		<?php } ?>
-	</section>
+		</section>
 
-	<section class="next-prev-bar">
-		<div class="block">
+		<section class="next-prev-arrows">
 			<span class="prev">
 				<?php if ($pageTitle == "Edition 1") { ?>
 					<a class="all-editions" href="<?php echo $editionsLink ?>">All Editions</a>
@@ -104,24 +141,8 @@ $numberOfEditions = count($editionsCategories);
 					<a href="<?php echo $nextEditionLink; ?>"><?php echo $nextEdition; ?></a>
 				<?php } ?>
 			</span>
-		</div>
-	</section>
+		</section>
 
-	<section class="next-prev-arrows">
-		<span class="prev">
-			<?php if ($pageTitle == "Edition 1") { ?>
-				<a class="all-editions" href="<?php echo $editionsLink ?>">All Editions</a>
-			<?php } else { ?>
-				<a href="<?php echo $previousEditionLink; ?>"><?php echo $previousEdition; ?></a>
-			<?php } ?>
-		</span>
-		<span class="next">
-			<?php if ($pageTitle == "Edition " . $numberOfEditions) { ?>
-				<a class="all-editions" href="<?php echo $editionsLink ?>">All Editions</a>
-			<?php } else { ?>
-				<a href="<?php echo $nextEditionLink; ?>"><?php echo $nextEdition; ?></a>
-			<?php } ?>
-		</span>
-	</section>
+	<?php endwhile; ?>
 
-<?php endwhile; ?>
+</section>

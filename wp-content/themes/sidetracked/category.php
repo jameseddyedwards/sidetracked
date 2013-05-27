@@ -10,6 +10,7 @@
 get_header();
 
 $contentType = sidetracked_is_news_landing() ? 'content-news-landing' : 'content';
+
 ?>
 
 <?php // ID required for screen readers link ?>

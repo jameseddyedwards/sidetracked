@@ -9,7 +9,7 @@ dl {margin-bottom:20px;}
 dt, dd {line-height:20px;}
 dt {font-weight:bold;}
 dd {margin-left:10px;}
-hr {margin:20px 0; border:0; border-top:1px dotted #c1c1c1; border-bottom:1px dotted #ffffff;}
+hr {margin:35px 0; border:0; border-top:1px dotted #c1c1c1; border-bottom:1px dotted #ffffff;}
 strong {font-weight:bold;}
 em {font-style:italic;}
 .muted {color:#999999;}
@@ -20,3 +20,21 @@ abbr {font-size:90%; text-transform:uppercase; border-bottom:1px dotted #ddd; cu
 
 .inline {display:block;}
 .inline li {display:inline-block; float:left; list-style:none;}
+
+
+
+/* Explore - To be moved to an explore.css file */
+.explore h4 {margin-bottom:20px;}
+.explore .searchform {margin-bottom:70px;}
+.explore .searchform input[type="text"] {width:207px;}
+.explore h5 {margin-bottom:20px;}
+
+.explore-filter {margin-bottom:45px;}
+
+.explore-categories {margin-left:50px;}
+.explore-categories > .cat-item {float:left; width:180px;}
+.explore-categories > .cat-item > span {color:#aaa; display:block; font:italic 16px georgia, "times-new-roman", serif; margin-bottom:20px;}
+.explore-categories .children .cat-item {margin-bottom:10px;}
+.explore-categories .children .cat-item a {background:url('../images/sprite/icons.png') no-repeat left -314px; color:#aaa; font:12px "proxima-nova", helvetica, sans-serif; font-weight:300; height:12px; padding-left:20px; text-transform:uppercase;}
+.explore-categories .children .cat-item a:hover,
+.explore-categories .children .cat-item a.selected {background-position:left -331px; color:#fff;}

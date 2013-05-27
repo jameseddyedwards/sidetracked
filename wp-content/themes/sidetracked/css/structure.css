@@ -14,7 +14,7 @@ the gridpak.js file to use '.block' as it's container.
 .block {margin:0 auto; max-width:1240px; overflow:hidden; position:relative;}
 
 /* Reusable column setup */
-.span {border:0px solid rgba(0,0,0,0); float:left; margin-bottom:12px; position:relative;
+.span {border:0px solid rgba(0,0,0,0); float:left; margin-bottom:12px; overflow:hidden; position:relative;
 	box-sizing:border-box;
 	moz-box-sizing:border-box;
 	webkit-box-sizing:border-box;
@@ -27,12 +27,14 @@ the gridpak.js file to use '.block' as it's container.
 .span a img {display:block;}
 .span a {position:relative;}
 
-/* 1. 2 Column Grid 0px - 319px 
+
+/* Mobile
 ----------------------------------------------------------------------------- 
 Span 1: 50%
 Span 2: 100%
 ----------------------------------------------------------------------------- */
 @media screen and (min-width: 0px) and (max-width: 319px) {
+	.block {padding:0 20px;}
 	.row {margin-left:-12px;}
 	.span {border-left-width:12px; padding:0 12px;}
 
@@ -42,7 +44,7 @@ Span 2: 100%
 }
 
 
-/* 2. 6 Column Grid 320px - 919px 
+/* iPad
 ----------------------------------------------------------------------------- 
 Span 1: 15.0%
 Span 2: 32.0%
@@ -52,14 +54,15 @@ Span 5: 83.0%
 Span 6: 1000%
 ----------------------------------------------------------------------------- */
 @media screen and (min-width: 320px) and (max-width: 768px) {
+	.block {padding:0 30px;}
 	.span {padding:0 2%; width:100%;}
 	.row .span:first-child {margin-left:0;}
 
 	.one {width:15.0%;}
 	.two {width:32.0%;}
 	.three {width:49.0%;}
-	.four {width:66.0%;}
-	.five {width:83.0%;}
+	.four {width:100%;}
+	.five {width:100%;}
 	.six {margin-left:0; width:100%;}
 }
 

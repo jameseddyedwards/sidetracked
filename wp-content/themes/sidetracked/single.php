@@ -13,9 +13,9 @@ get_header();
 
 <?php /* ID required for screen readers link */ ?>
 <section id="body-content">
-	
+
 	<!-- Content -->
-	<?php get_template_part('content'); ?>
+	<?php get_template_part('content-article'); ?>
 
 	<!-- Comments -->
 	<?php// comments_template('', true); ?>

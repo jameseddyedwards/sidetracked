@@ -19,7 +19,9 @@ $pageTitle = strtolower(get_the_title());
 $parentPage = get_post($post->post_parent);
 $parentPageTitle = strtolower($parentPage->post_title);
 
-if ($parentPageTitle == 'editions' || $pageTitle == 'editions') {
+if ($pageTitle == 'editions') {
+	$content = 'content-category';
+} else if ($parentPageTitle == 'editions') {
 	$content = 'content-edition';
 } else if ($parentPageTitle == 'explore' || $pageTitle == 'explore') {
 	$content = 'content-explore';

@@ -33,7 +33,7 @@ function dbs_admin_ui() {
 			include 'sync-screen.php';
 			break;
 		default :
-			$tokens = get_option('outlandish_sync_tokens') ? : array();
+			$tokens = get_option('outlandish_sync_tokens') ? '' : array();
 			include 'main-screen.php';
 			break;
 	}
@@ -48,7 +48,7 @@ function dbs_post_actions() {
 		wp_die(__('You do not have sufficient permissions to access this page.'));
 	}
 
-	$tokens = get_option('outlandish_sync_tokens') ? : array();
+	$tokens = get_option('outlandish_sync_tokens') ? '' : array();
 
 	switch ($_REQUEST['dbs_action']) {
 		//add a token
@@ -180,7 +180,7 @@ function dbs_push() {
 	if (stripslashes($_REQUEST['secret']) != $secret) {
 		die("You don't know me");
 	}
-	$tokens = get_option('outlandish_sync_tokens') ? : array();
+	$tokens = get_option('outlandish_sync_tokens') ? '' : array();
 
 //	echo $sql = gzinflate($_POST['sql']);
 	$sql = stripslashes($_POST['sql']);

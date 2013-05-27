@@ -1,3 +1,16 @@
 # BEGIN WordPress
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /sidetracked/
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /sidetracked/index.php [L]
+
+# search redirect
+# this will take anything in the query string, minus any extraneous values, and turn them into a clean working url
+RewriteCond %{QUERY_STRING} \\?s=([^&]+) [NC]
+RewriteRule ^$ /sidetracked/explore?s=%1 [NC,R,L]
+</IfModule>
 
 # END WordPress
