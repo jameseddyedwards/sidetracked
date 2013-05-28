@@ -108,9 +108,7 @@ $testSite = strpos($_SERVER['HTTP_HOST'], 'localhost') !== false ? true : false;
 		)); ?>
 	</nav>
 
-	<a class="logo" href="<?php echo esc_url(home_url('/')); ?>" title="<?php echo esc_attr(get_bloginfo('name', 'display')); ?>" rel="home">
-		<img src="../images/datasift-logo.png" alt="<?php bloginfo('name'); ?>" width="300" />
-	</a>
+	<a class="logo" href="<?php echo esc_url(home_url('/')); ?>" title="<?php echo esc_attr(get_bloginfo('name', 'display')); ?>" rel="home"><?php bloginfo('name'); ?></a>
 
 </header>
 

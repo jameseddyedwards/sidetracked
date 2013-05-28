@@ -57,4 +57,7 @@
 
 	<?php endif; ?>
 
+	<!-- Newsletter Signup -->
+	<?php echo sidetracked_newsletter_signup(); ?>
+
 </section>

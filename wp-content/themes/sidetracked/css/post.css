@@ -1,4 +1,7 @@
 
+/* All Articles */
+article a {color:#7fb4c1;}
+
 /* Single Post */
 .feature-image {margin-bottom:55px; width:100%;}
 
@@ -7,11 +10,15 @@
 .related-posts h3 {color:#fff; margin-top:-53px; padding:0 5px; text-align:center;}
 .related-posts h3 span {background:#000; font:28px "proxima-nova", helvetica, sans-serif; font-weight:700; letter-spacing:1px; padding:0 5px;}
 
-article {color:#202020;}
+.article article {color:#202020;}
+.article article img {display:block; margin:14px 0;}
 
 /* Profile */
 .profile,
-.profile p {font:300 14px/20px "proxima-nova", helvetica, sans-serif;}
+.profile p,
+.sponsor,
+.sponsor p {font:300 14px/20px "proxima-nova", helvetica, sans-serif;}
+.profile img {font:300 14px/20px "proxima-nova", helvetica, sans-serif;}
 
 @media screen and (min-width: 0px) and (max-width: 319px) {
 	.row {margin-left:-30px;}

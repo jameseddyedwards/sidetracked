@@ -15,7 +15,7 @@ form div p em {color:red;}
 form p {margin:0 0 2px;}
 
 .single-input input[type="text"] {border:0; border-radius:3px 0 0 3px; float:left; font-style:italic; height:45px; padding:0 20px;}
-.single-input input[type="submit"] {background-color:#232323; border:0; border-radius:0 3px 3px 0; color:#fff; float:left; font:700 24px "proxima-nova", sans-serif; height:45px; letter-spacing:1px; padding:0 20px; text-transform:uppercase;}
+.single-input input[type="submit"] {background-color:#232323; border:0; border-radius:0 3px 3px 0; color:#fff; float:left; font:700 24px "proxima-nova", helvetica, sans-serif; height:45px; letter-spacing:1px; padding:0 20px; text-transform:uppercase;}
 
 div.wpcf7-mail-sent-ok {border:1px solid #398F14; border-radius:4px;}
 div.wpcf7-response-output {margin:0; padding:4px 10px;}

@@ -59,13 +59,15 @@ $is_reviews = $pageTitle == 'reviews';
 							$count = $count + 1;
 							$image = get_field('sidetracked_edition_image');					
 							$imageSize = $count == 1 && $is_advice ? "rectangle-wide" : "square-small"; // Set a default image size so the gallery displays if an image size list is not provided.
+							$articleInfo = get_field('sidetracked_article_info');
+							$info = $articleInfo != "" ? $articleInfo : get_field('sidetracked_sub_title');
 						?>
 						<div class="span <?php echo $count == 1 && $is_advice ? 'twelve' : 'four'; ?>">
 							<a class="article-img" href="<?php the_permalink(); ?>">
 								<img src="<?php echo $image['sizes'][$imageSize]; ?>" alt="<?php echo $image['alt']; ?>" />
 								<span class="title-bar">
 									<span class="title"><?php the_title(); ?></span>
-									<span class="sub-title"><?php the_excerpt_rss(); ?></span>
+									<span class="sub-title"><?php echo $info; ?></span>
 								</span>
 							</a>
 						</div>

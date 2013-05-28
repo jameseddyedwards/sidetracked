@@ -122,6 +122,8 @@ $parentCat = 0;
 		</div>
 	</section>
 
+	<hr />
+
 	<?php while (have_posts()) : the_post(); ?>
 		
 		<section class="block">
@@ -134,6 +136,8 @@ $parentCat = 0;
 							$image = get_field('sidetracked_edition_image');
 							$imageSize = 'square-small';
 							$isAdvert = get_field('sidetracked_is_advert');
+							$articleInfo = get_field('sidetracked_article_info');
+							$info = $articleInfo != "" ? $articleInfo : get_field('sidetracked_sub_title');
 						?>
 						<?php if ($image) { ?>
 							<div class="span four">
@@ -141,7 +145,7 @@ $parentCat = 0;
 									<?php if (!$isAdvert) { ?>
 										<span class="title-bar">
 											<span class="title"><?php the_title(); ?></span>
-											<span class="sub-title"><?php the_excerpt_rss(); ?></span>
+											<span class="sub-title"><?php echo $info; ?></span>
 										</span>
 									<?php } ?>
 									<img src="<?php echo $image['sizes'][$imageSize]; ?>" alt="<?php echo $image['alt']; ?>" />

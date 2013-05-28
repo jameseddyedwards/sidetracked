@@ -8,13 +8,13 @@
 .right {float:right;}
 .top {margin-top:0;}
 
-hr {border-bottom:1px dotted #3c3c3c;}
+hr {margin:35px 0; border:0; border-bottom:1px dotted #555;}
 
 blockquote {color:#555; font:16px/26px "proxima-nova", helvetica, arial, sans-serif; text-transform:uppercase;}
 blockquote .opening,
 blockquote .closing {background:#dedede; display:block; height:35px;}
 blockquote .opening {background:#dedede url('../images/sprite/icons.png') no-repeat left -234px; margin-bottom:20px;}
-blockquote .quoted {display:block; font:italic 16px georgia, serif; margin-top:30px; text-transform:none;}
+blockquote .quoted {display:block; font:italic 16px "ff-meta-serif-web-pro", georgia, serif; margin-top:30px; text-transform:none;}
 blockquote .quoted:before {content:"- ";}
 blockquote .closing {background:#dedede url('../images/sprite/icons.png') no-repeat right -273px; margin:20px 0;}
 
@@ -42,9 +42,11 @@ cite {font-style:normal;}
 }
 .article-img:hover .title-bar {display:block;}
 .article-img .title-bar span {color:#8b8b8b; display:block; font-size:16px; text-align:center;}
-.article-img .title-bar .title {height:16px; overflow:hidden; text-transform:uppercase;}
-.article-img .title-bar .sub-title {color:#eee; font:italic 15px/26px georgia, serif;}
+.article-img .title-bar .title {font:300 20px/22px "proxima-nova", helvetica, sans-serif; letter-spacing:1px; overflow:hidden; text-transform:uppercase;}
+.article-img .title-bar .sub-title {color:#eee; font:italic 16px/24px "ff-meta-serif-web-pro", georgia, serif;}
 
+.explore .title-bar,
+.survive .title-bar {display:block;}
 
 .next-prev-arrows span a {background:url('../images/sprite/icons.png') no-repeat; height:84px; margin-top:-42px; overflow:hidden; position:fixed; text-indent:-999px; top:50%; width:84px; z-index:10;}
 .next-prev-arrows .prev a {background-position:0 -116px; left:0;}
