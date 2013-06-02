@@ -8,7 +8,7 @@
  */
 ?>
 
-<form method="get" class="searchform" action="<?php echo esc_url(home_url( '/')); ?>">
+<form method="get" class="searchform" action="<?php echo esc_url(home_url( '/')); ?>explore">
 	<fieldset class="single-input">
 		<label for="s" class="assistive-text"><?php _e('Search', 'sidetracked'); ?></label>
 		<input type="text" class="field" name="s" id="s" />

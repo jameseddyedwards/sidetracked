@@ -14,11 +14,15 @@ article a {color:#7fb4c1;}
 .article article img {display:block; margin:14px 0;}
 
 /* Profile */
-.profile,
-.profile p,
-.sponsor,
-.sponsor p {font:300 14px/20px "proxima-nova", helvetica, sans-serif;}
-.profile img {font:300 14px/20px "proxima-nova", helvetica, sans-serif;}
+.article article .profile,
+.article article .profile p,
+.article article .sponsor,
+.article article .sponsor p {font:300 14px/20px "proxima-nova", helvetica, sans-serif;}
+.article article .profile img {display:inline-block; border-radius:50px; width:auto;}
+
+/* Sponsor */
+.article article .sponsor p {margin-bottom:10px;}
+.article article .sponsor img {display:inline-block; margin:0; width:auto;}
 
 @media screen and (min-width: 0px) and (max-width: 319px) {
 	.row {margin-left:-30px;}

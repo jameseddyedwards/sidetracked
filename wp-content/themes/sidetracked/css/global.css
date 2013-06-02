@@ -13,7 +13,7 @@ header nav li a {border-right:1px dotted #747474; display:block; font-family:"pr
 header nav li:last-child a {border-right:0;}
 header nav li.menu-parent-item {position:relative;}
 header nav li.menu-parent-item > a {background:url('../images/sprite/icons.png') no-repeat right -36px; padding-right:35px;}
-header nav li.menu-parent-item ul {background-color:#121212; display:none; padding:9px 0; position:absolute; text-align:left; top:19px; width:100%;}
+header nav li.menu-parent-item ul {background-color:#121212; display:none; padding:9px 0; position:absolute; text-align:left; top:17px; width:100%;}
 header nav li.menu-parent-item:hover ul {display:block;}
 header nav li.menu-parent-item ul li a {border:0; display:block; padding:5px 15px 5px 25px; text-align:left;}
 

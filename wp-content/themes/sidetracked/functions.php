@@ -46,24 +46,18 @@ include TEMPLATEPATH . '/inc/shortcodes.php';
 include TEMPLATEPATH . '/inc/utilities.php';
 
 
-/**
- * Add theme support
- */
+/* Filter Management */
 remove_filter('the_content', 'wpautop');
 
-add_theme_support('menus');
+/* Add Theme Support */
+add_theme_support('automatic-feed-links'); // Add default posts and comments RSS feed links to <head>.
+add_post_type_support('article', 'post-formats'); // This theme supports a variety of post formats.
+add_theme_support('menus'); // Add menu support for navigation menus
 
+/* Navigation Menu's */
 register_nav_menu('navigation', __('Navigation', 'sidetracked'));
 register_nav_menu('navigation-footer', __('Footer Navigation', 'sidetracked'));
 register_nav_menu('navigation-survive', __('Survive Navigation', 'sidetracked'));
-
-// Add default posts and comments RSS feed links to <head>.
-add_theme_support('automatic-feed-links');
-
-// This theme supports a variety of post formats.
-add_post_type_support('article', 'post-formats');
-
-
 
 
 /**
@@ -114,7 +108,7 @@ function sidetracked_setup() {
 		return 100;
 	}
 	function new_excerpt_more($more) {
-		return '';
+		return '...';
 	}
 	add_filter('excerpt_more', 'new_excerpt_more');
 	add_filter('excerpt_length', 'sidetracked_excerpt_length');
