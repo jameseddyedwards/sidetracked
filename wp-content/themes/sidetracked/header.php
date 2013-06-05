@@ -57,11 +57,9 @@ $testSite = strpos($_SERVER['HTTP_HOST'], 'localhost') !== false ? true : false;
 ?>
 </title>
 
-<?php if ($testSite) { ?>
-	<!-- TypeKit -->
-	<script type="text/javascript" src="//use.typekit.net/kqu8zyf.js"></script>
-	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
-<?php } ?>
+<!-- TypeKit -->
+<script type="text/javascript" src="//use.typekit.net/kqu8zyf.js"></script>
+<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
