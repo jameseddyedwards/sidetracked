@@ -9,7 +9,9 @@ function SearchFilter($query) {
 	}
 
     if ($query->is_search) {
-		$query->set('cat', $filterCatList);
+    	if (isset($_GET['filter'])) {
+			$query->set('cat', $filterCatList);
+		}
         $query->set('posts_per_page', 12);
     }
     return $query;
