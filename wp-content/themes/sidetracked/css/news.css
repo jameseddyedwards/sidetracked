@@ -1,0 +1,30 @@
+.news-article {margin-bottom:50px;}
+
+.news .posted-on {background:#ebebeb url('../images/background/stone.png') repeat; height:391px; position:relative;}
+.news .posted-on .date {bottom:6px; padding-left:10px; position:absolute; text-align:right; right:10px;}
+.news .posted-on span {color:#1a1a1a; display:block; font:22px/24px "proxima-nova", helvetica, arial, sans-serif; font-weight:300; text-transform:uppercase;}
+.news .posted-on span em {font-style:normal; font-size:23px;}
+
+.news .news-article-image a,
+.news .news-article-image a img {display:block;}
+
+.news .news-article-content {margin-bottom:40px;}
+
+.news .comment {background:#fff; padding:6px 10px;}
+.news .comment-avatar,
+.news .comment-content {padding-top:12px;}
+.news .comment-avatar {margin-top:4px;}
+.news .comment-author-meta {margin-bottom:15px;}
+
+.news .author {color:#1a1a1a; display:block; font:18px/26px "proxima-nova", helvetica, arial, sans-serif; font-weight:300;}
+.news .comment-author-meta a {color:#adadad; font:14px/14px "proxima-nova", helvetica, arial, sans-serif;}
+.news .comment-author-meta a:hover {color:#1a1a1a;}
+
+.news .comment-content {margin:0 30px 0 8px;}
+.news .comment-content p {margin-bottom:15px;}
+.news .comment-content hr {margin:25px 0;}
+
+.news .read-more {color:#528996;}
+
+h3 {margin:15px 0;}
+p {color:#1a1a1a;}

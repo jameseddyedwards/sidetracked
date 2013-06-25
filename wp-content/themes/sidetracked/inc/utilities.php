@@ -22,31 +22,22 @@ function sidetracked_is_news_landing() {
 
 // Is the current page a news article page?
 function sidetracked_is_news_article() {
-	return get_the_title($post->post_parent) == 'News' ? true : false;
+	return get_post_type($post) == "news-article" ? true : false;
 }
 
+// Is Edition?
+function sidetracked_is_edition() {
+	return strpos(strtolower(get_the_title()), 'edition') !== false ? true : false;
+}
 
-// Generates a newsletter sign up block
-function sidetracked_newsletter_signup($buttonText) {
+// Is page style inverted
+function is_inverted() {
+	return $invert = is_single() || sidetracked_is_news_article() || sidetracked_is_news_landing() ? true : false;
+}
 
-	$buttonText = $buttonText != '' ? $buttonText : "GO";
-
-	$html = '<hr />';
-	$html .= '<section class="block newsletter-signup">';
-	$html .= '<div class="row">';
-	$html .= '<div class="span twelve">';
-	$html .= '<h4 class="center">Don\'t miss out. Sign up to receive free monthly email updates from Sidetracked</h4>';
-	$html .= '<form class="newsletter" action="http://groups.google.com/group/sidetracked/boxsubscribe">';
-	$html .= '<fieldset class="single-input">';
-	$html .= '<input name="email" type="text" placeholder="sign up for enews updates">';
-	$html .= '<input name="sub" type="submit" value="' . $buttonText . '">';
-	$html .= '</fieldset>';
-	$html .= '</form>';
-	$html .= '</div>';
-	$html .= '</div>';
-	$html .= '</section>';
-
-	return $html;
+// Gets inverted class if page style is inverted
+function get_invert_class() {
+	return is_inverted() ? 'invert' : '';
 }
 
 ?>

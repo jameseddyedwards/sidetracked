@@ -1,0 +1,12 @@
+.vimeography-ballistic { clear: both; margin: 20px auto; width: 100%;}
+
+.vimeography-ballistic .vimeography-main {margin-bottom: 25px;}
+
+.vimeography-ballistic .vimeography-data p {
+    color: #444444;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 23px;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+}

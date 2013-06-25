@@ -10,7 +10,13 @@
 		<div class="row cf">
 			{{#info}}
 				<div class="span four">
-					<img src="{{thumbnail_large}}" alt="{{title}}" data-id="{{id}}" width="186" height="105" />
+					<span class="thumb">
+						<img src="{{thumbnail_large}}" alt="{{title}}" data-id="{{id}}" width="186" height="105" />
+					</span>
+					<div class="video-meta">
+						<span class="title">{{title}}</span>
+						<span class="author">{{author}}</span>
+					</div>
 				</div>
 			{{/info}}
 		</div>

@@ -11,21 +11,6 @@ get_header();
 
 ?>
 
-<?php /* ID required for screen readers link */ ?>
-<section id="body-content">
-
-	<!-- Content -->
-	<?php get_template_part('content-article'); ?>
-
-	<!-- Comments -->
-	<?php// comments_template('', true); ?>
-
-	<!-- Comments Form -->
-	<?php// get_template_part('content', 'comments-form'); ?>
-
-	<!-- Recent Posts -->
-	<?php// get_template_part('content', 'recent-posts'); ?>
-
-</section>
+<?php get_template_part('content-article'); ?>
 
 <?php get_footer(); ?>

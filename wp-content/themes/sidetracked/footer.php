@@ -24,7 +24,7 @@
 		</nav>
 
 		<!-- Newsletter Signup Form -->
-		<form class="newsletter" action="http://groups.google.com/group/sidetracked/boxsubscribe">
+		<form class="newsletter" action="http://summerton.createsend.com/t/r/s/ctrjuh/">
 			<fieldset class="single-input">
 				<input name="email" type="text" placeholder="sign up for enews updates">
 				<input name="sub" type="submit" value="GO">

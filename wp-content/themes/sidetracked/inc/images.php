@@ -137,7 +137,6 @@ function sidetracked_get_image_size_count($imageSize) {
 			$count = 12;
 			break;
 		case "rectangle-medium":
-		case "square-medium":
 			$count = 8;
 			break;
 		case "rectangle-small":

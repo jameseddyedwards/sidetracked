@@ -13,47 +13,54 @@
  */
 ?>
 
-<div class="row comments">
-	<div class="span2">&nbsp;</div>
-	<div class="span9">
-		<h2>Comments</h2>
+<section class="comments">
+	<div class="block">
+		<div class="row cf">
+			<div class="span two">&nbsp;</div>
+			<div class="span eight"><h3>Comments</h3></div>
+			<div class="span two">&nbsp;</div>
+		</div>
+				
 		<?php if (!have_comments()) { // No comments or comments disabled ?>
-			<p class="nocomments"><?php _e('There are currently no comments. Be the first to post a comment below.', 'sidetracked'); ?></p>
+			<div class="row cf">
+				<div class="span two">&nbsp;</div>
+				<div class="span eight">
+					<p class="nocomments"><?php _e('There are currently no comments. Be the first to post a comment below.', 'sidetracked'); ?></p>
+				</div>
+				<div class="span two">&nbsp;</div>
+			</div>
+
 		<?php } elseif (have_comments()) { ?>
-			<?php if (post_password_required()) { ?>
-				<p class="nopassword"><?php _e('This post is password protected. Enter the password to view any comments.', 'sidetracked'); // Comments are password protected ?></p>
-			<?php } else { ?>
+			<div class="row cf">
+				<div class="span two">&nbsp;</div>
+				<div class="span eight">
+					<?php if (post_password_required()) { ?>
+						<p class="nopassword"><?php _e('This post is password protected. Enter the password to view any comments.', 'sidetracked'); // Comments are password protected ?></p>
+					<?php } else { ?>
+						<?php wp_list_comments(array('callback' => 'sidetracked_comment', 'style' => 'div')); ?>
+					<?php } ?>
+				</div>
+			</div>
+		<?php } ?>
+	</div>
 
-				<?php if (get_comment_pages_count() > 1 && get_option('page_comments')) : // are there comments to navigate through ?>
-					<nav id="comment-nav-above">
-						<h1 class="assistive-text"><?php _e( 'Comment navigation', 'sidetracked' ); ?></h1>
-						<div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', 'sidetracked' ) ); ?></div>
-						<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'sidetracked' ) ); ?></div>
-					</nav>
-				<?php endif; // check for comment navigation ?>
-
-				<ol class="commentlist">
-					<?php
-						/* Loop through and list the comments. Tell wp_list_comments()
-						 * to use sidetracked_comment() to format the comments.
-						 * If you want to overload this in a child theme then you can
-						 * define sidetracked_comment() and that will be used instead.
-						 * See sidetracked_comment() in sidetracked/functions.php for more.
-						 */
-						wp_list_comments(array('callback' => 'sidetracked_comment'));
-					?>
-				</ol>
-
-				<?php if (get_comment_pages_count() > 1 && get_option('page_comments')) { // Are there comments to navigate through ?>
+	<?php if (have_comments() && !post_password_required()) { ?>
+		<?php if (get_comment_pages_count() > 1 && get_option('page_comments')) { // Are there comments to navigate through ?>
+			<div class="row cf">
+				<div class="span two">&nbsp;</div>
+				<div class="span eight">
 					<nav id="comment-nav-below">
 						<h1 class="assistive-text"><?php _e( 'Comment navigation', 'sidetracked' ); ?></h1>
 						<div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', 'sidetracked' ) ); ?></div>
 						<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'sidetracked' ) ); ?></div>
 					</nav>
-				<?php } ?>
-			<?php } ?>
+				</div>
+				<div class="span two">&nbsp;</div>
+			</div>
 		<?php } ?>
-		<hr />
-	</div>
-	<div class="span1">&nbsp;</div>
-</div>
+	<?php } ?>
+
+	<!-- Comments Form -->
+	<?php get_template_part('content', 'form-comments'); ?>
+
+</section>

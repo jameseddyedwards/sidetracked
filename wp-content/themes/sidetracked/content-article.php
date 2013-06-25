@@ -9,7 +9,7 @@
 
 // Feature Image
 $featureImageObj = get_field('sidetracked_feature_image');
-//var_dump($featureImageObj);
+
 ?>
 
 <section id="body-content" class="article">
@@ -28,9 +28,6 @@ $featureImageObj = get_field('sidetracked_feature_image');
 			<h1><?php the_title(); ?></h1>
 
 			<h2><?php the_field('sidetracked_sub_title'); ?></h2>
-
-			
-			<?php //the_content(); ?>
 
 			<?php if (get_field('sidetracked_article_content')): ?>
  
@@ -54,7 +51,7 @@ $featureImageObj = get_field('sidetracked_feature_image');
 					</div>
 					<div id="author-description">
 						<h2><?php printf( esc_attr__( 'About %s', 'sidetracked' ), get_the_author() ); ?></h2>
-						<?php the_author_meta( 'description' ); ?>
+						<?php the_author_meta('description'); ?>
 						<div id="author-link">
 							<a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" rel="author">
 								<?php printf( __( 'View all posts by %s <span class="meta-nav">&rarr;</span>', 'sidetracked' ), get_the_author() ); ?>
@@ -87,29 +84,28 @@ $featureImageObj = get_field('sidetracked_feature_image');
 					<?php } ?>
 				</ol>
 
-				<!-- YARRP -->
-				<?php related_posts(); ?>
 			<?php } ?>
 
-
-			<div class="next-previous cf">
-				<div class="previous">
-					<?php previous_post_link('%', '', 'yes'); ?>
-				</div>
-				<div class="next">
-					<?php next_post_link('%', '', 'yes'); ?>
-				</div>
+			<div class="next-prev-arrows cf">
+				<span class="prev">
+					<?php previous_post_link("%link"); ?>
+				</span>
+				<span class="next">
+					<?php next_post_link("%link"); ?>
+				</span>
 			</div>
 			
 		</article>
 
 	<?php endwhile; ?>
 	
+	<!-- AddThis Social Buttons -->
+	<?php get_template_part('content', 'add-this'); ?>
+	
 	<!-- Newsletter Signup -->
-	<?php echo sidetracked_newsletter_signup(); ?>
+	<?php get_template_part('content', 'form-newsletter'); ?>
 
-	<!-- Content -->
-	<?php get_template_part('content-related'); ?>
-
+	<!-- YARRP -->
+	<?php related_posts(); ?>
 
 </section>

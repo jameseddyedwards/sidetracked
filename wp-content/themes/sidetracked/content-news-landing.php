@@ -1,13 +1,12 @@
 <?php
 /**
- * The fall back template for displaying content in the single.php template
+ * The template for displaying a list of News Articles
  *
  * @package WordPress
  * @subpackage sidetracked
  * @since Sidetracked 1.0
  */
 
-//var_dump($featureImageObj);
 ?>
 
 <h1>News</h1>
@@ -16,12 +15,13 @@
 
 	<?php if (have_posts()) : ?>
 		<?php while (have_posts()) : the_post(); ?>
+		
 			<?php
 			// Feature Image
 			$featureImageObj = get_field('sidetracked_feature_image');
 			?>
 
-			<div class="news-article">
+			<article class="news-article">
 
 				<!-- Date & Image -->
 				<div class="block cf">
@@ -41,15 +41,28 @@
 					<div class="span two">&nbsp;</div>
 					<div class="span eight">
 						<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-						<?php the_excerpt(); ?>
+						<p><?php the_excerpt(); ?></p>
 						<a class="read-more" href="<?php the_permalink(); ?>">read more &#187;</a>
 					</div>
 					<div class="span two">&nbsp;</div>
 				</div>
 
-			</div>
+			</article>
 
 		<?php endwhile; ?>
+
+		<div class="block">
+			<div class="span two">&nbsp;</div>
+			<div class="span eight">
+				<?php if (function_exists('wp_paginate')) {
+					wp_paginate();
+				} ?>
+			</div>
+			<div class="span two">&nbsp;</div>
+		</div>
+
+		<?php //wp_reset_query(); ?>
+
 	<?php else : ?>
 	this is where we should be
 		<p><?php _e( 'Apologies, but no results were found for the requested archive. Perhaps searching will help find a related post.', 'twentyeleven' ); ?></p>
@@ -58,6 +71,6 @@
 	<?php endif; ?>
 
 	<!-- Newsletter Signup -->
-	<?php echo sidetracked_newsletter_signup(); ?>
+	<?php get_template_part('content', 'form-newsletter'); ?>
 
 </section>

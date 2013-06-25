@@ -6,5 +6,19 @@
 /* Custom Modifications */
 
 .sidetracked-tv {}
-.sidetracked-tv .four {height:210px; overflow:hidden;}
-.sidetracked-tv img {width:100%;}
+.sidetracked-tv .four {cursor:pointer;}
+.sidetracked-tv .four .thumb {display:block; max-height:220px; overflow:hidden;}
+.sidetracked-tv .four img {display:block;}
+.sidetracked-tv .four .video-meta {background-color:#161616; height:22px; margin-bottom:0; overflow:hidden; padding:5px 10px 10px;}
+.sidetracked-tv .four .video-meta span {display:block; font-size:14px; font-weight:100; line-height:26px;}
+.sidetracked-tv .four .title {font-family:"proxima-nova", helvetica, arial, sans-serif;}
+.sidetracked-tv .four:hover .title {color:#888;
+	transition: color .25s ease-in;
+	-moz-transition: color .25s ease-in;
+	-webkit-transition: color .25s ease-in;
+	-o-transition: color .25s ease-in;
+}
+
+@media screen and (min-width: 320px) and (max-width: 768px) {
+	.sidetracked-tv .four .thumb {max-height:none;}
+}

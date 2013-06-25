@@ -20,6 +20,9 @@ abbr {font-size:90%; text-transform:uppercase; border-bottom:1px dotted #ddd; cu
 .inline {display:block;}
 .inline li {display:inline-block; float:left; list-style:none;}
 
+article ul,
+article ol {margin:25px 0;}
+article li {list-style:disc; margin-left:18px;}
 
 
 /* Explore - To be moved to an explore.css file */

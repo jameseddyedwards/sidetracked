@@ -40,8 +40,10 @@ footer .social .pinterest a {background-position:-127px -56px;}
 footer .copyright {font:12px "ff-meta-serif-web-pro", georgia, serif;}
 
 /* 404 */
-.error404 h4 {margin-bottom:40px;}
-
+.error404 .link-list h3 {margin:20px 0;}
+.error404 .link-list p,
+.error404 .link-list a {color:#888; display:block; font: 16px/26px "proxima-nova", helvetica, arial, sans-serif;}
+.error404 .link-list a:hover {color:#fff;}
 
 /* Phone - Vertical */
 @media (max-width:480px) {

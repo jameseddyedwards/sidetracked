@@ -39,10 +39,7 @@ $testSite = strpos($_SERVER['HTTP_HOST'], 'localhost') !== false ? true : false;
 	// Print the <title> tag based on what is being viewed.
 	global $page, $paged;
 
-	wp_title('|', true, 'right');
-
-	// Add the blog name.
-	bloginfo('sidetracked');
+	wp_title('|', true, 'left');
 
 	// Add the blog description for the home/front page.
 	$site_description = get_bloginfo('description', 'display');
@@ -74,16 +71,10 @@ $testSite = strpos($_SERVER['HTTP_HOST'], 'localhost') !== false ? true : false;
 	 */
 	wp_head();
 
-	$invert = false;
-	$invert = get_the_title($post->post_parent) == 'News' ? true : false;
-	$invert = sidetracked_is_news_landing() ? true : false;
-	if (is_single() || $invert) {
-		$invert = 'invert';
-	}
 ?>
 </head>
 
-<body <?php body_class($invert); ?>>
+<body <?php body_class(get_invert_class()); ?>>
 
 <?php get_template_part('content', 'body-scripts'); ?>
 

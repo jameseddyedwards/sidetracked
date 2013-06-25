@@ -7,6 +7,7 @@
 .hide-text {background-color:transparent; border:0; color:transparent; font:0/0 a; text-shadow:none;}
 .right {float:right;}
 .top {margin-top:0;}
+.white-bg {background:#fff;}
 
 hr {margin:35px 0; border:0; border-bottom:1px dotted #555;}
 
@@ -19,7 +20,7 @@ blockquote .quoted:before {content:"- ";}
 blockquote .closing {background:#dedede url('../images/sprite/icons.png') no-repeat right -273px; margin:20px 0;}
 
 /* Snippet Blockquote */
-blockquote.snippet {color:#555; font:24px/32px "adelle", georgia, serif; text-transform:none;}
+blockquote.snippet {color:#555; font:24px/32px "adelle", georgia, serif; margin-bottom:22px; text-transform:none;}
 
 address {display:block; margin-bottom:20px; line-height:20px; font-style:normal;}
 small {font-size:100%;}
@@ -29,10 +30,10 @@ cite {font-style:normal;}
 .access a.assistive-text:active,
 .access a.assistive-text:focus {background:#eee; border-bottom:1px solid #ddd; color:#1982d1; clip:auto !important; font-size:12px; position:absolute; text-decoration:underline; top:0; left:7.6%;}
 
-.cf, .subscribe, .container {*zoom:1;}
-.cf:before, .subscribe:before, .container:before,
-.cf:after, .subscribe:after, .container:after {display:table; content:"";}
-.cf:after, .subscribe:after, .container:after {clear:both;}
+.cf, .subscribe, .container, .row {*zoom:1;}
+.cf:before, .subscribe:before, .container:before, .row:before,
+.cf:after, .subscribe:after, .container:after .row:after {display:table; content:"";}
+.cf:after, .subscribe:after, .container:after .row:after {clear:both;}
 
 .article-img {overflow:hidden;}
 .article-img .title-bar {background-color:rgba(0,0,0,0.8); bottom:0; display:none; height:55px; left:0; padding:8px 20px 0; position:absolute; width:100%;
@@ -40,9 +41,8 @@ cite {font-style:normal;}
 	moz-box-sizing:border-box;
 	webkit-box-sizing:border-box;
 }
-.article-img:hover .title-bar {display:block;}
 .article-img .title-bar span {color:#8b8b8b; display:block; font-size:16px; text-align:center;}
-.article-img .title-bar .title {font:300 20px/22px "proxima-nova", helvetica, sans-serif; letter-spacing:1px; overflow:hidden; text-transform:uppercase;}
+.article-img .title-bar .title {font:300 20px/22px "proxima-nova", helvetica, sans-serif; height:22px; letter-spacing:1px; overflow:hidden; text-transform:uppercase;}
 .article-img .title-bar .sub-title {color:#eee; font:italic 16px/24px "ff-meta-serif-web-pro", georgia, serif;}
 
 .explore .title-bar,
@@ -67,19 +67,22 @@ cite {font-style:normal;}
 .next-prev-bar .next {float:right; margin-left:2%; text-align:right;}
 .next-prev-bar .next a {background-position:right -206px; padding-right:38px;}
 
+.wp-paginate .current {background:#1a1a1a !important;}
+
 .post-edit-link {background:url('../images/sprite/icons.png') no-repeat right bottom; bottom:0; height:75px; overflow:hidden; position:fixed; right:0; text-indent:-999px; width:75px;}
 
-.newsletter-signup {margin:50px auto 60px;}
+.newsletter-signup {border-top:1px dotted #1a1a1a; margin:0 auto; max-width:5000px; padding:50px 0 60px;}
 .newsletter-signup .newsletter-intro {display:block; margin-bottom:10px; text-align:center;}
 .newsletter-signup h4 {margin-bottom:30px;}
-.newsletter-signup fieldset {margin:0 auto; width:500px;}
+.newsletter-signup fieldset {margin:0 auto; width:510px;}
 .newsletter-signup fieldset input[type="text"] {background-color:#f9f9f9; border:1px solid #b7b7b7; height:43px; width:380px;
 	-moz-box-shadow: inset 0 1px 1px rgba(0,0,0,0.1);
 	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.1);
 	box-shadow: inset 0 1px 1px rgba(0,0,0,0.1);
 }
 
-.link-list a {}
+/* Add This */
+.addthis_toolbox {margin:20px 0 20px 30px;}
 
 /* Responsive Visibility */
 .visible-phone {display:none;}

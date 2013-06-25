@@ -1,0 +1,23 @@
+<div id="vimeography-gallery-{{gallery_id}}" class="vimeography-ballistic" data-id="{{version}}"{{#gallery_width}} style="max-width: {{gallery_width}};"{{/gallery_width}}>
+
+	{{#info}}
+	
+		<div class="vimeography-data">
+			<p>{{title}}</p>
+		</div>
+		
+		<div class="vimeography-main">
+				<iframe id="vimeography-embed-{{id}}" src="http://player.vimeo.com/video/{{id}}?title=0&byline=0&portrait=0&api=1&player_id=vimeography-embed-{{id}}" width="820" height="461" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+		</div>
+		
+	{{/info}}	
+			
+</div> <!-- End Gallery -->
+
+<script charset="utf-8" type="text/javascript">
+	(function($){
+		$(document).ready(function(){
+			$('#vimeography-gallery-{{gallery_id}}').fitVids();				       	
+		});
+	})(jQuery);
+</script>

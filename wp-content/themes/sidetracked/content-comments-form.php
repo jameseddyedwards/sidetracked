@@ -23,46 +23,35 @@ comment_form($fields);
 */
 ?>
 
+<div class="block">
 <?php if ('open' == $post->comment_status) : ?>
 	<?php $req = get_option('require_name_email'); ?>
 
-	<div id="respond" class="row comment-form">
-		<div class="span2">&nbsp;</div>
-		<div class="span3">
-			<h2><?php comment_form_title('Post a Comment', 'Post a reply to %s'); ?></h2>
-			<p>
-				<strong>HTML tags you can use:</strong>
-				<code><?php echo allowed_tags(); ?></code>
-			</p>
-			<?php if (function_exists('show_subscription_checkbox')) {
-				show_subscription_checkbox();
-			} ?>
-		</div>
-		<div class="span6">
+	<h3><?php comment_form_title('Post a Comment', 'Post a reply to %s'); ?></h3>
+	
+	<div id="respond" class="row">
+		<div class="span two">&nbsp;</div>
+		<div class="span eight comment-form">
 
 			<?php if (get_option('comment_registration') && !$user_ID) : ?>
 				<p>You must be <a href="<?php echo get_option('siteurl'); ?>/wp-login.php?redirect_to=">logged in</a> to post a comment.</p>
 			<?php else : ?>
 				<form action="<?php echo get_option('siteurl'); ?>/wp-comments-post.php" method="post" id="commentform">
 					<fieldset>
-						<?php if ($user_ID) : ?>
-							<p class="logged-in">Logged in and commenting as <a href="<?php echo admin_url('profile.php'); ?>"><?php echo $current_user->display_name ?></a>. Not you? <a title="Log out of this account" href="<?php echo wp_logout_url(get_permalink()); ?>">Log out</a>.</p>
-						<?php else : ?>
-							<label for="author">Name <?php if ($req) echo "<span class='required'>*</span>"; ?></label>
-							<input id="author" name="author" type="text" value="<?php echo $comment_author; ?>" size="22" tabindex="1" />
+							<input id="author" name="author" type="text" value="<?php echo $current_user->display_name ?>" size="22" tabindex="1" />
+							<label for="author">Name <?php if ($req) echo "<span class='required'>*</span>"; ?><?php if ($user_ID) { ?> <span class="logout">(Not you? <a title="Log out of this account" href="<?php echo wp_logout_url(get_permalink()); ?>">Log out</a>)</span><?php } ?></label>						
 
-							<label for="email">Email (will not be published) <?php if ($req) echo "<span class='required'>*</span>"; ?></label>
-							<input id="email" name="email" type="text" value="<?php echo $comment_author_email; ?>" size="22" tabindex="2" />
+							<input id="email" name="email" type="text" value="<?php echo $current_user->user_email ?>" size="22" tabindex="2" />
+							<label for="email">Email <?php if ($req) echo "<span class='required'>*</span>"; ?></label>
 
+							<input type="text" name="url" id="url" value="" size="22" tabindex="3" placeholder="<?php echo $current_user->data->user_url ?>" />
 							<label for="url">Website</label>
-							<input type="text" name="url" id="url" value="" size="22" tabindex="3" />
-						<?php endif; ?>
+						<?php //endif; ?>
 
-						<label for="comment">Comment</label>
 						<textarea id="comment" name="comment" tabindex="4"></textarea>
 						<?php comment_id_fields(); ?>
 
-						<input name="submit" type="submit" id="submit" tabindex="5" value="Submit Comment" class="button" />
+						<input name="submit" type="submit" id="submit" tabindex="5" value="Submit Comment" />
 						<?php cancel_comment_reply_link("Cancel reply"); ?>
 						<?php do_action('comment_form', $post->ID); ?>
 					</fieldset>
@@ -70,21 +59,20 @@ comment_form($fields);
 			<?php endif; ?>
 
 		</div>
-		<div class="span1">&nbsp;</div>
+		<div class="span two">&nbsp;</div>
 	</div>
 
 	<div class="row">
 		<div class="span2">&nbsp;</div>
 		<div class="span9">
-			<hr />
 
-			<div class="next-previous cf">
-				<div class="previous" title="Previous Post">
-					<?php previous_post('%', '', 'yes'); ?>
-				</div>
-				<div class="next" title="Next Post">
-					<?php next_post('%', '', 'yes'); ?>
-				</div>
+			<div class="next-prev-arrows cf">
+				<span class="prev">
+					<?php previous_post_link("%link"); ?>
+				</span>
+				<span class="next">
+					<?php next_post_link("%link"); ?>
+				</span>
 			</div>
 			
 			<hr class="bottom" />
@@ -93,4 +81,5 @@ comment_form($fields);
 	</div>
 
 <?php endif; ?>
+</div>
 

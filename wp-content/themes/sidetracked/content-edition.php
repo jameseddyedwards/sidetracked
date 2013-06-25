@@ -96,7 +96,7 @@ $imageSizeCount = 0;
 							</div>
 						<?php } ?>
 
-						<?php if ($imageSizeCount == 12) { ?>
+						<?php if ($imageSizeCount >= 12) { ?>
 							<?php $imageSizeCount = 0; ?>
 							</div>
 							<div class="row cf">

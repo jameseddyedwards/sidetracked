@@ -26,7 +26,7 @@ get_header();
 			</div>
 		</div>
 
-		<div class="row center link-list">
+		<div class="row center link-list cf">
 			<div class="span four">
 				<h3 class="center">Editions</h3>
 				<p><?php _e('Sidetracked is a monthly online journal. View the latest Edition now or explore articles from previous editions.', 'sidetracked'); ?></p>
