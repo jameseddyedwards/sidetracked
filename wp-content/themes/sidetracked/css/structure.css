@@ -16,11 +16,11 @@ the gridpak.js file to use '.block' as it's container.
 /* Reusable column setup */
 .span {border:0px solid rgba(0,0,0,0); float:left; margin-bottom:12px; overflow:hidden; position:relative;
 	box-sizing:border-box;
-	moz-box-sizing:border-box;
-	webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
 	background-clip:padding-box !important;
-	moz-background-clip:padding-box !important;
-	webkit-background-clip:padding-box !important;
+	-moz-background-clip:padding-box !important;
+	-webkit-background-clip:padding-box !important;
 }
 .span img {width:100%;}
 .span a {position:relative;}

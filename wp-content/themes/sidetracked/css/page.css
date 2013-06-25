@@ -13,33 +13,20 @@
 .all-guides .guide-link a {color:#8b8b8b; margin:5px 0;}
 
 
-/* Phone - Vertical */
-@media (max-width:480px) {
+/* Mobile */
+@media screen and (min-width: 0px) and (max-width: 319px) {
 
 }
 
-/* Phone - Horizontal */
-@media (max-width:767px) {
+
+/* iPad */
+@media screen and (min-width: 320px) and (max-width: 768px) {
 
 }
 
-/* Tablet - Vertical */
-@media (min-width:768px) and (max-width:979px) {
 
-}
-
-/* Tablet - Horizontal */
-@media (min-width:979px) {
-
-}
-
-/* Small Browser */
-@media (min-width:1200px) {
-	
-}
-
-/* Large Browser */
-@media (min-width:1600px) {
+/* Monitors */
+@media screen and (min-width: 769px) {
 
 }
 

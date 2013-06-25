@@ -30,11 +30,14 @@ article a {color:#528996;}
 .article article .sponsor p {margin-bottom:10px;}
 .article article .sponsor img {display:inline-block; margin:0; width:auto;}
 
+
+/* Mobile */
 @media screen and (min-width: 0px) and (max-width: 319px) {
 	article .row {margin-left:-30px;}
 	article .span {border-left-width:30px; padding:0 30px;}
 }
 
+/* Monitors */
 @media screen and (min-width: 769px) {
 	article .block {padding:0 50px;}
 	article .row {margin-left:-30px;}

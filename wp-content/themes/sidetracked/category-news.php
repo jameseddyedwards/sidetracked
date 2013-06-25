@@ -9,24 +9,27 @@
 
 get_header();
 
-query_posts(array('post_type'=> 'news'));
+//$paged = get_query_var('paged') ? get_query_var('paged') : 1;
+query_posts(array('post_type' => 'news', /*'paged' => $paged,*/ 'posts_per_page' => 10));
+/*
+$big = 999999999; // need an unlikely integer
 
-$paged = get_query_var('paged') ? get_query_var('paged') : 1;
-$wp_query = new WP_Query(array(
-	'post_type' => 'news-article',
-	'paged' => $paged,
-	//'post_per_page' => 3
-	)
-);
-
+echo paginate_links( array(
+	'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+	'format' => '?paged=%#%',
+	'current' => max( 1, get_query_var('paged') ),
+	'total' => $wp_query->max_num_pages
+) );
+echo $wp_query->max_num_pages;
+*/
 ?>
 
 <h1>News</h1>
 
 <section id="body-content" class="news">
 
-	<?php if ($wp_query->have_posts()) : ?>
-		<?php while ($wp_query->have_posts()) : $wp_query->the_post(); ?>
+	<?php if (have_posts()) : ?>
+		<?php while (have_posts()) : the_post(); ?>
 		
 			<?php
 			// Feature Image

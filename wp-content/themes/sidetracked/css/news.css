@@ -10,20 +10,6 @@
 
 .news .news-article-content {margin-bottom:40px;}
 
-.news .comment {background:#fff; padding:6px 10px;}
-.news .comment-avatar,
-.news .comment-content {padding-top:12px;}
-.news .comment-avatar {margin-top:4px;}
-.news .comment-author-meta {margin-bottom:15px;}
-
-.news .author {color:#1a1a1a; display:block; font:18px/26px "proxima-nova", helvetica, arial, sans-serif; font-weight:300;}
-.news .comment-author-meta a {color:#adadad; font:14px/14px "proxima-nova", helvetica, arial, sans-serif;}
-.news .comment-author-meta a:hover {color:#1a1a1a;}
-
-.news .comment-content {margin:0 30px 0 8px;}
-.news .comment-content p {margin-bottom:15px;}
-.news .comment-content hr {margin:25px 0;}
-
 .news .read-more {color:#528996;}
 
 h3 {margin:15px 0;}

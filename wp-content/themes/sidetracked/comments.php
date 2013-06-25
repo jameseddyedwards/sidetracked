@@ -37,7 +37,7 @@
 					<?php if (post_password_required()) { ?>
 						<p class="nopassword"><?php _e('This post is password protected. Enter the password to view any comments.', 'sidetracked'); // Comments are password protected ?></p>
 					<?php } else { ?>
-						<?php wp_list_comments(array('callback' => 'sidetracked_comment', 'style' => 'div')); ?>
+						<?php wp_list_comments(array('callback' => 'sidetracked_comment', /*'style' => 'div'*/)); ?>
 					<?php } ?>
 				</div>
 			</div>

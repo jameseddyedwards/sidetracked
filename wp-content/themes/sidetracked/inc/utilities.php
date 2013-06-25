@@ -22,7 +22,7 @@ function sidetracked_is_news_landing() {
 
 // Is the current page a news article page?
 function sidetracked_is_news_article() {
-	return get_post_type() == "news-article" ? true : false;
+	return get_post_type() == "news" ? true : false;
 }
 
 // Is Edition?

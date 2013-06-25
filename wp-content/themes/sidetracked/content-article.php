@@ -88,10 +88,10 @@ $featureImageObj = get_field('sidetracked_feature_image');
 
 			<div class="next-prev-arrows cf">
 				<span class="prev">
-					<?php previous_post_link("%link"); ?>
+					<?php previous_post_link("%link", '%title', true); ?>
 				</span>
 				<span class="next">
-					<?php next_post_link("%link"); ?>
+					<?php next_post_link("%link", '%title', true); ?>
 				</span>
 			</div>
 			

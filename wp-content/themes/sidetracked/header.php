@@ -85,7 +85,7 @@ $testSite = strpos($_SERVER['HTTP_HOST'], 'localhost') !== false ? true : false;
 </div>
 
 <header>
-	<nav role="navigation">
+	<nav role="navigation" class="visible-desktop">
 		<?php /* Allow screen readers / text browsers to skip the navigation menu and get right to the good stuff. */ ?>
 		<div class="skip-link"><a class="assistive-text" href="#body-content" title="<?php esc_attr_e('Skip to main content', 'sidetracked'); ?>"><?php _e('Skip to main content', 'sidetracked'); ?></a></div>
 		

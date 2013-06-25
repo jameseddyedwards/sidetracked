@@ -45,42 +45,19 @@ footer .copyright {font:12px "ff-meta-serif-web-pro", georgia, serif;}
 .error404 .link-list a {color:#888; display:block; font: 16px/26px "proxima-nova", helvetica, arial, sans-serif;}
 .error404 .link-list a:hover {color:#fff;}
 
-/* Phone - Vertical */
-@media (max-width:480px) {
+/* Mobile */
+@media screen and (min-width: 0px) and (max-width: 319px) {
 
 }
 
-/* Phone - Horizontal */
-@media (max-width:768px) {
+
+/* iPad */
+@media screen and (min-width: 320px) and (max-width: 768px) {
 
 }
 
-/* Phone & Tablet */
-@media (max-width:979px) {
 
-}
-
-/* Tablet - Vertical */
-@media (min-width:768px) and (max-width:979px) {
-
-}
-
-/* Tablet + */
-@media (min-width:480px) {
-
-}
-
-/* Tablet - Horizontal */
-@media (min-width:980px) {
-
-}
-
-/* Small Browser */
-@media (min-width:1200px) {
-
-}
-
-/* Large Browser */
-@media (min-width:1600px) {
+/* Monitors */
+@media screen and (min-width: 769px) {
 
 }

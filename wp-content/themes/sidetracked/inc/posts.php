@@ -33,20 +33,19 @@ function change_post_object_label() {
 
 // Creates a new post type for News Articles
 function create_post_type() {
-	register_post_type('news-article',
+	register_post_type('news',
 		array(
 			'labels' => array(
 				'name' => __( 'News' ),
 				'singular_name' => __('News Article')
 			),
 		'public' => true,
-		'has_archive' => true,
+		//'has_archive' => true,
 		'menu_position' => 5,
 		'taxonomies' => array('category')
 		)
 	);
 }
-
 
 /**
  * Template for News Comments
@@ -63,7 +62,7 @@ if (!function_exists('sidetracked_comment')) :
 			default :
 		?>
 		<div class="comment">
-			<div id="li-comment-<?php comment_ID(); ?>" class="span one comment-avatar">
+			<div id="comment-<?php comment_ID(); ?>" class="span one comment-avatar">
 				<?php echo get_avatar($comment, 68); ?>
 			</div>
 			<div class="span eleven">
@@ -89,11 +88,9 @@ if (!function_exists('sidetracked_comment')) :
 						<em class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'sidetracked' ); ?></em>
 					<?php endif; ?>
 					<?php comment_text(); ?>
-
-					<?php $comment->has_children ? '<hr />' : ''; ?>
 				</div>
 			</div>
-			<div class="clear"></div>
+			<br class="clear" />
 		</div>
 	<?php
 		break;
