@@ -30,11 +30,6 @@ cite {font-style:normal;}
 .access a.assistive-text:active,
 .access a.assistive-text:focus {background:#eee; border-bottom:1px solid #ddd; color:#1982d1; clip:auto !important; font-size:12px; position:absolute; text-decoration:underline; top:0; left:7.6%;}
 
-.cf, .subscribe, .container, .row {*zoom:1;}
-.cf:before, .subscribe:before, .container:before, .row:before,
-.cf:after, .subscribe:after, .container:after .row:after {display:table; content:"";}
-.cf:after, .subscribe:after, .container:after .row:after {clear:both;}
-
 .article-img {overflow:hidden;}
 .article-img .title-bar {background-color:rgba(0,0,0,0.8); bottom:0; display:none; height:55px; left:0; padding:8px 20px 0; position:absolute; width:100%;
 	box-sizing:border-box;
@@ -69,7 +64,7 @@ cite {font-style:normal;}
 
 .wp-paginate .current {background:#1a1a1a !important;}
 
-.post-edit-link {background:url('../images/sprite/icons.png') no-repeat right bottom; bottom:0; height:75px; overflow:hidden; position:fixed; right:0; text-indent:-999px; width:75px;}
+.post-edit-link {background:url('../images/sprite/icons.png') no-repeat right bottom; bottom:0; height:75px; overflow:hidden; position:fixed; right:0; text-indent:-999px; width:75px; z-index:10;}
 
 .newsletter-signup {border-top:1px dotted #1a1a1a; margin:0 auto; max-width:5000px; padding:50px 0 60px;}
 .newsletter-signup .newsletter-intro {display:block; margin-bottom:10px; text-align:center;}
@@ -90,6 +85,11 @@ cite {font-style:normal;}
 .hidden-desktop {display:none;}
 .visible-desktop {display:inherit;}
 
+/* Clearfix */
+.cf, .subscribe, .container, .row {*zoom:1;}
+.cf:before, .subscribe:before, .container:before, .row:before,
+.cf:after, .subscribe:after, .container:after .row:after {display:table; content:"";}
+.cf:after, .subscribe:after, .container:after .row:after {clear:both;}
 
 /* Mobile */
 @media screen and (min-width: 0px) and (max-width: 319px) {

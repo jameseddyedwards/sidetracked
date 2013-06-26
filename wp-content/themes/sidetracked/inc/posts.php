@@ -33,6 +33,17 @@ function change_post_object_label() {
 
 // Creates a new post type for News Articles
 function create_post_type() {
+	$post_supports = array(
+		'title',
+		'editor',
+		'author',
+		'thumbnail',
+		'excerpt',
+		'trackbacks',
+		'custom-fields',
+		'comments',
+		'revisions'
+	);
 	register_post_type('news',
 		array(
 			'labels' => array(
@@ -40,9 +51,10 @@ function create_post_type() {
 				'singular_name' => __('News Article')
 			),
 		'public' => true,
-		//'has_archive' => true,
+		'has_archive' => true,
 		'menu_position' => 5,
-		'taxonomies' => array('category')
+		'taxonomies' => array('category'),
+		'supports' => $post_supports
 		)
 	);
 }

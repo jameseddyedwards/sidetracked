@@ -20,6 +20,17 @@ function structure_span_nine($atts, $content = null) {return '<div class="span n
 function structure_span_ten($atts, $content = null) {return '<div class="span ten">' . do_shortcode($content) . '</div>';}
 function structure_span_eleven($atts, $content = null) {return '<div class="span eleven">' . do_shortcode($content) . '</div>';}
 function structure_span_twelve($atts, $content = null) {return '<div class="span twelve">' . do_shortcode($content) . '</div>';}
+function vimeo($atts, $content=null, $code="") {
+	
+	$byline = isset($atts['byline']) ? $atts['byline'] : 0;
+	$auto_play = isset($atts['autoplay']) ? 'true' : 'false';
+	$portrait = isset($atts['portrait']) ? $atts['portrait'] : 0;
+	$width = isset($atts['width']) ? $atts['width'] : "400";
+	$height = isset($atts['height']) ? $atts['height'] : "225";
+	$class = isset($atts['class']) ? $atts['class'] : "";
+	$list = '<iframe src="http://player.vimeo.com/video/'.$content.'?byline='.$byline.'&portrait='.$portrait.'&autoplay='.$auto_play.'" width="'.$width.'" height="'.$height.'" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen class="'.$class.'"></iframe>';
+	return $list;
+}
 
 add_shortcode('row', 'structure_row');
 add_shortcode('one', 'structure_span_one');
@@ -34,6 +45,7 @@ add_shortcode('nine', 'structure_span_nine');
 add_shortcode('ten', 'structure_span_ten');
 add_shortcode('eleven', 'structure_span_eleven');
 add_shortcode('twelve', 'structure_span_twelve');
+add_shortcode('vimeo', 'vimeo');
 
 add_shortcode('blockquote', 'blockquote');
 add_shortcode('quoted', 'quoted');

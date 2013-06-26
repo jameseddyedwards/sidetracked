@@ -32,7 +32,19 @@ $testSite = strpos($_SERVER['HTTP_HOST'], 'localhost') !== false ? true : false;
 <head>
 
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
-<meta name="viewport" content="width=device-width" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+<!-- Favicon -->
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+<link rel="icon" href="/favicon.ico" type="image/x-icon">
+<!-- For third-generation iPad with high-resolution Retina display: -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/favicon-144.png">
+<!-- For iPhone with high-resolution Retina display: -->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/favicon-114.png">
+<!-- For first- and second-generation iPad: -->
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="/favicon-72.png">
+<!-- For non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
+<link rel="apple-touch-icon-precomposed" href="/favicon-57.png">
 
 <title>
 <?php
@@ -40,12 +52,6 @@ $testSite = strpos($_SERVER['HTTP_HOST'], 'localhost') !== false ? true : false;
 	global $page, $paged;
 
 	wp_title('|', true, 'left');
-
-	// Add the blog description for the home/front page.
-	$site_description = get_bloginfo('description', 'display');
-	if ($site_description && (is_home() || is_front_page())) {
-		echo " | $site_description";
-	}
 
 	// Add a page number if necessary:
 	if ($paged >= 2 || $page >= 2) {
@@ -72,6 +78,20 @@ $testSite = strpos($_SERVER['HTTP_HOST'], 'localhost') !== false ? true : false;
 	wp_head();
 
 ?>
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-23898536-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
 </head>
 
 <body <?php body_class(get_invert_class()); ?>>
@@ -85,7 +105,8 @@ $testSite = strpos($_SERVER['HTTP_HOST'], 'localhost') !== false ? true : false;
 </div>
 
 <header>
-	<nav role="navigation" class="visible-desktop">
+	<span class="visible-phone visible-tablet nav-button">MENU</span>
+	<nav role="navigation" class="hidden-phone hidden-tablet">
 		<?php /* Allow screen readers / text browsers to skip the navigation menu and get right to the good stuff. */ ?>
 		<div class="skip-link"><a class="assistive-text" href="#body-content" title="<?php esc_attr_e('Skip to main content', 'sidetracked'); ?>"><?php _e('Skip to main content', 'sidetracked'); ?></a></div>
 		

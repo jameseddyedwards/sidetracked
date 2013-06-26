@@ -8,9 +8,16 @@
 .news .news-article-image a,
 .news .news-article-image a img {display:block;}
 
-.news .news-article-content {margin-bottom:40px;}
+.news .news-article-content {color:#1a1a1a; margin-bottom:40px;}
 
 .news .read-more {color:#528996;}
 
 h3 {margin:15px 0;}
 p {color:#1a1a1a;}
+
+/* Monitors */
+@media screen and (min-width: 769px) {
+	article .block {padding:0 50px;}
+	article .row {margin-left:-12px;}
+	article .span {border-left-width:12px;}
+}

@@ -13,9 +13,11 @@
 .comments .comment-avatar {margin-top:4px;}
 .comments .comment-author-meta {margin-bottom:15px;}
 
-.comments .author {color:#1a1a1a; display:block; font:18px/26px "proxima-nova", helvetica, arial, sans-serif; font-weight:300;}
 .comments .comment-author-meta a {color:#adadad; font:14px/14px "proxima-nova", helvetica, arial, sans-serif;}
 .comments .comment-author-meta a:hover {color:#1a1a1a;}
+.comments .comment-author-meta .author,
+.comments .comment-author-meta .author a {color:#1a1a1a; display:block; font:18px/26px "proxima-nova", helvetica, arial, sans-serif; font-weight:300;}
+.comments .comment-author-meta .author a:hover {color:#000;}
 
 .comments .comment-content {margin:0 30px 0 8px;}
 .comments .comment-content p {margin-bottom:15px;}

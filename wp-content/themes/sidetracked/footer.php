@@ -18,7 +18,7 @@
 			<?php /* Our footer navigation menu. */ ?>
 			<?php wp_nav_menu(array(
 				'theme_location'	=> 'navigation-footer',
-				'items_wrap'      	=> '<ul><li><a href="' . get_field('current_edition', 'option') . '">Current Edition</a></li>%3$s</ul>',
+				'items_wrap'      	=> '<ul><li><a href="' . get_field('current_edition', 'option') . '">Home</a></li>%3$s</ul>',
 				'container'			=> false
 			)); ?>
 		</nav>

@@ -28,13 +28,13 @@ article li {list-style:disc; margin-left:18px;}
 /* Explore - To be moved to an explore.css file */
 .explore h4 {margin-bottom:20px;}
 .explore .searchform {margin-bottom:70px;}
-.explore .searchform input[type="text"] {width:207px;}
+.explore .searchform input[type="text"] {width:50%;}
 .explore h5 {margin-bottom:20px;}
 
 .explore-filter .span {margin-bottom:0;}
 
 .explore-categories {margin-left:50px;}
-.explore-categories > .cat-item {float:left; width:180px;}
+.explore-categories > .cat-item {float:left; min-height:190px; width:170px;}
 .explore-categories > .cat-item > span {color:#aaa; display:block; font:italic 16px "ff-meta-serif-web-pro", georgia, times, serif; margin-bottom:20px;}
 .explore-categories .children .cat-item {margin-bottom:10px;}
 .explore-categories .children .cat-item a {background:url('../images/sprite/icons.png') no-repeat left -314px; color:#aaa; font:12px "proxima-nova", helvetica, sans-serif; font-weight:300; height:12px; padding-left:20px; text-transform:uppercase;}

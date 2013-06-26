@@ -1,2 +1,6 @@
 .span a,
 .span a img {display:block;}
+
+footer {border-top:1px dotted #555; margin-top: 40px;}
+
+.row {clear:both;}

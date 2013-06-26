@@ -86,14 +86,8 @@ $featureImageObj = get_field('sidetracked_feature_image');
 
 			<?php } ?>
 
-			<div class="next-prev-arrows cf">
-				<span class="prev">
-					<?php previous_post_link("%link", '%title', true); ?>
-				</span>
-				<span class="next">
-					<?php next_post_link("%link", '%title', true); ?>
-				</span>
-			</div>
+			<!-- AddThis Social Buttons -->
+			<?php get_template_part('content', 'next-previous-arrows'); ?>
 			
 		</article>
 

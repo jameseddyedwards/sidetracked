@@ -10,9 +10,6 @@
 global $current_user;
 get_currentuserinfo();
 
-?>
-
-<?php
 /*
 //WordPress populated form
 $fields = array(
@@ -43,8 +40,8 @@ comment_form($fields);
 
 							<input id="email" name="email" type="text" value="<?php echo $current_user->user_email ?>" size="22" tabindex="2" />
 							<label for="email">Email <?php if ($req) echo "<span class='required'>*</span>"; ?></label>
-
-							<input type="text" name="url" id="url" value="" size="22" tabindex="3" placeholder="<?php echo $current_user->data->user_url ?>" />
+							
+							<input type="text" name="url" id="url" value="<?php echo $current_user->user_url ?>" size="22" tabindex="3" placeholder="<?php echo $current_user->data->user_url ?>" />
 							<label for="url">Website</label>
 
 							<textarea id="comment" name="comment" tabindex="4"></textarea>
@@ -62,7 +59,7 @@ comment_form($fields);
 		</div>
 
 		<!-- Next / Previous Buttons -->
-		<?php get_template_part('content', 'next-previous'); ?>
+		<?php get_template_part('content', 'next-previous-arrows'); ?>
 
 	<?php endif; ?>
 </div>

@@ -70,4 +70,4 @@ $class="";
            return $list;
 }
 
-add_shortcode( 'ylwm_vimeo', 'your_local_webmaster_vimeo_handler' );
+add_shortcode( 'vimeo', 'your_local_webmaster_vimeo_handler' );

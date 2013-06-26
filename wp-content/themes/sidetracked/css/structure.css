@@ -26,11 +26,7 @@ the gridpak.js file to use '.block' as it's container.
 .span a {position:relative;}
 
 
-/* Mobile
------------------------------------------------------------------------------ 
-Span 1: 50%
-Span 2: 100%
------------------------------------------------------------------------------ */
+/* Mobile */
 @media screen and (min-width: 0px) and (max-width: 319px) {
 	.block {padding:0 20px;}
 	.row {margin-left:-12px;}
@@ -42,16 +38,8 @@ Span 2: 100%
 }
 
 
-/* iPad
------------------------------------------------------------------------------ 
-Span 1: 15.0%
-Span 2: 32.0%
-Span 3: 49.0%
-Span 4: 66.0%
-Span 5: 83.0%
-Span 6: 1000%
------------------------------------------------------------------------------ */
-@media screen and (min-width: 320px) and (max-width: 768px) {
+/* Tablet */
+@media screen and (min-width: 320px) and (max-width: 767px) {
 	.block {padding:0 30px;}
 	.span {padding:0 2%; width:100%;}
 	.row .span:first-child {margin-left:0;}
@@ -65,23 +53,9 @@ Span 6: 1000%
 }
 
 
-/* 3. 12 Column Grid 920px - Infinity 
------------------------------------------------------------------------------ 
-Span 1: 8.33333333333%
-Span 2: 16.6666666667%
-Span 3: 25.0%
-Span 4: 33.3333333333%
-Span 5: 41.6666666667%
-Span 6: 50.0%
-Span 7: 58.3333333333%
-Span 8: 66.6666666667%
-Span 9: 75.0%
-Span 10: 83.3333333333%
-Span 11: 91.6666666667%
-Span 12: 100%
------------------------------------------------------------------------------ */
-@media screen and (min-width: 769px) {
-	.block {padding:0 80px;}
+/* Monitor */
+@media screen and (min-width: 768px) {
+	.block {padding:0 61px;}
 	.row {margin-left:-12px;}
 	.span {border-left-width:12px;}
 

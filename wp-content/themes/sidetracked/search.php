@@ -48,6 +48,8 @@ if ($emptySearch || !have_posts()) {
 				
 				<?php if (!$emptySearch && have_posts()) { ?>
 					<h5><?php printf(__('Showing results for "%s"', 'sidetracked'), get_search_query()); ?></h5>
+				<?php } else if ($emptySearch) { ?>
+					<?php // Do Nothing ?>
 				<?php } else { ?>
 					<h5><?php printf(__('No results found.', 'sidetracked'), get_search_query()); ?> Try browsing our latest:</h5>
 				<?php } ?>

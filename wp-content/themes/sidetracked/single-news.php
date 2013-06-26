@@ -12,7 +12,6 @@ get_header();
 ?>
 
 <section id="body-content" class="news">
-
 	<?php if (have_posts()) : ?>
 		<?php while (have_posts()) : the_post(); ?>
 

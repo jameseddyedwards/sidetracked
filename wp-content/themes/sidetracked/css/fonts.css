@@ -65,6 +65,7 @@ a img {display:inline-block;}
 
 /* Article */
 .article h1 {font-size:45px; letter-spacing:0; line-height:45px; margin-bottom:20px;}
+article a {color:#528996; font:17px/27px "ff-meta-serif-web-pro", georgia, times, serif;}
 
 
 /* Editions */
