@@ -10,8 +10,7 @@
 
 <section class="block">
 	<div class="row add-this">
-		<div class="span four">&nbsp;</div>
-		<div class="span four">
+		<div class="span twelve">
 
 			<!-- AddThis Button BEGIN -->
 			<div class="addthis_toolbox addthis_default_style ">
@@ -25,6 +24,5 @@
 			<!-- AddThis Button END -->
 
 		</div>
-		<div class="span four">&nbsp;</div>
 	</div>
 </section>
