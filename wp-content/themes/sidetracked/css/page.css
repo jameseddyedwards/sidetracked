@@ -12,21 +12,3 @@
 .all-guides .guide-link {display:block; text-align:center;}
 .all-guides .guide-link a {color:#8b8b8b; margin:5px 0;}
 
-
-/* Mobile */
-@media screen and (min-width: 0px) and (max-width: 319px) {
-
-}
-
-
-/* iPad */
-@media screen and (min-width: 320px) and (max-width: 768px) {
-
-}
-
-
-/* Monitors */
-@media screen and (min-width: 769px) {
-
-}
-
