@@ -1,4 +1,3 @@
-/* Post */
 
 /* All Articles */
 article p,
@@ -25,8 +24,8 @@ article a {color:#528996;}
 .article article .profile p,
 .article article .profile a,
 .article article .sponsor,
-.article article .sponsor p
-.article article .sponsor a, {font:300 14px/20px "proxima-nova", helvetica, sans-serif;}
+.article article .sponsor a,
+.article article .sponsor p {font:300 14px/20px "proxima-nova", helvetica, sans-serif;}
 .article article .profile img {display:inline-block; border-radius:50px; width:auto;}
 
 /* Sponsor */
