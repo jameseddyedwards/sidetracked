@@ -6,7 +6,7 @@ License URI: http://www.gnu.org/licenses/gpl.html
 Tags: seo, SEO, google, meta, meta description, search engine optimization, xml sitemap, xml sitemaps, google sitemap, sitemap, sitemaps, robots meta, rss, rss footer, yahoo, bing, news sitemaps, XML News Sitemaps, WordPress SEO, WordPress SEO by Yoast, yoast, multisite, canonical, nofollow, noindex, keywords, meta keywords, description, webmaster tools, google webmaster tools, seo pack
 Requires at least: 3.3
 Tested up to: 3.6
-Stable tag: 1.4.10
+Stable tag: 1.4.12
 
 Improve your WordPress SEO: Write better content and have a fully optimized WordPress site using the WordPress SEO plugin by Yoast.
 
@@ -102,6 +102,30 @@ You'll find the [FAQ on Yoast.com](http://yoast.com/wordpress/seo/faq/).
 7. The advanced section of the WordPress SEO meta box.
 
 == Changelog ==
+
+= 1.4.12 =
+
+* Bugfixes
+	* Submit button displays again on Titles & Metas page.
+	* SEO Title now calculates length correctly.
+	* Force rewrite titles should no longer reset wrongly on update.
+
+= 1.4.11 =
+
+* i18n
+	* Updated de_DE, ru_RU, zh_CN.
+* Bugfixes
+    * Make rel="publisher" markup appear on every page.
+    * Prevent empty property='article:publisher' markup from being output .
+    * Fixed twitter:description tag should only appears if OpenGraph is inactive.
+    * og:description will default to get_the_excerpt when meta description is blank (similar to how twitter:description works).
+	* Fixes only 25 tags (and other taxonomy) are being indexed in taxonomy sitemaps.
+	* Fix lastmod dates for taxonomies in XML sitemap index file.
+* Enhancements
+	* Changed Social Admin section to have a tab-layout.
+	* Moved Google+ section from Homepage tab of Titles & Metas to Social tab.
+	* Make twitter:domain use WordPress site name instead of domainname.
+	* Added more output filters in the Twitter class.
 
 = 1.4.10 =
 
@@ -1247,6 +1271,10 @@ You'll find the [FAQ on Yoast.com](http://yoast.com/wordpress/seo/faq/).
 * Initial beta release.
 
 == Upgrade Notice ==
+
+= 1.4.12 =
+Upgrade to prevent issues with XML sitemaps and missing save buttons on some settings pages.
+
 
 = 0.3.4 =
 Upgrade immediately to make sure your WordPress install is secure.
