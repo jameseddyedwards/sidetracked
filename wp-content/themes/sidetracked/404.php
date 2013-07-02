@@ -33,18 +33,18 @@ get_header();
 			</div>
 			<div class="span four">
 				<h3 class="center">Inspiration</h3>
-				<a href="<?php echo esc_url(home_url('/')); ?>">Explore Sidetracked Content</a>
-				<a href="<?php echo esc_url(home_url('/')); ?>">Survive: Advice &amp; Guides</a>
-				<a href="<?php echo esc_url(home_url('/')); ?>">Survive: Gear Reviews</a>
-				<a href="<?php echo esc_url(home_url('/')); ?>/tv">Sidetracked TV</a>
-				<a href="<?php echo esc_url(home_url('/')); ?>">Adventure and Expedition News</a>
+				<a href="<?php echo esc_url(home_url('/')); ?>explore">Explore Sidetracked Content</a>
+				<a href="<?php echo esc_url(home_url('/')); ?>advice">Survive: Advice &amp; Guides</a>
+				<a href="<?php echo esc_url(home_url('/')); ?>reviews">Survive: Gear Reviews</a>
+				<a href="<?php echo esc_url(home_url('/')); ?>tv">Sidetracked TV</a>
+				<a href="<?php echo esc_url(home_url('/')); ?>category/news">Adventure and Expedition News</a>
 			</div>
 			<div class="span four">
 				<h3 class="center">Information</h3>
-				<a href="<?php echo esc_url(home_url('/')); ?>/about-us">About Us</a>
-				<a href="<?php echo esc_url(home_url('/')); ?>/get-in-touch">Get In Touch</a>
-				<a href="<?php echo esc_url(home_url('/')); ?>/contribute">Contribute</a>
-				<a href="<?php echo esc_url(home_url('/')); ?>/advertise">Advertise</a>
+				<a href="<?php echo esc_url(home_url('/')); ?>about-sidetracked">About Us</a>
+				<a href="<?php echo esc_url(home_url('/')); ?>contact">Get In Touch</a>
+				<a href="<?php echo esc_url(home_url('/')); ?>contribution-guidelines/">Contribute</a>
+				<a href="<?php echo esc_url(home_url('/')); ?>advertising">Advertise</a>
 			</div>
 		</div>
 
