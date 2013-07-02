@@ -21,23 +21,23 @@ get_header();
 
 				<!-- Date & Image -->
 				<div class="block cf">
-					<div class="span two posted-on">
+					<div class="span two posted-on visible-desktop">
 						<?php sidetracked_posted_on(); ?>
 					</div>
 					<div class="span eight news-article-image">
 						<img src="<?php echo $featureImageObj['sizes']['rectangle-medium']; ?>" alt="<?php the_title(); ?>" />
 					</div>
-					<div class="span two">&nbsp;</div>
+					<div class="span two visible-desktop">&nbsp;</div>
 				</div>
 
 				<!-- Title, Excerpt & Read More -->
 				<div class="block cf">
-					<div class="span two">&nbsp;</div>
+					<div class="span two visible-desktop">&nbsp;</div>
 					<div class="span eight news-article-content">
 						<h3><?php the_title(); ?></h3>
 						<?php the_content(); ?>
 					</div>
-					<div class="span two">&nbsp;</div>
+					<div class="span two visible-desktop">&nbsp;</div>
 				</div>
 
 			</article>
