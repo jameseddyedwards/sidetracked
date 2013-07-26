@@ -32,7 +32,7 @@ function sidetracked_is_edition() {
 
 // Is page style inverted
 function is_inverted() {
-	return $invert = is_single() || sidetracked_is_news_article() || sidetracked_is_news_landing() ? true : false;
+	return $invert = (is_single() || sidetracked_is_news_article() || sidetracked_is_news_landing()) && !is_search() ? true : false;
 }
 
 // Gets inverted class if page style is inverted
